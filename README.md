@@ -9,7 +9,7 @@
 8. More TLS tools...
 
 ## Download <a href="https://mega.nz/#!GMZSSCDD">Virtual Machine (.OVA)</a>
-<p>This VM is build with Oracle Virtual Box 6.0.4</p>
+> This VM is build with Oracle Virtual Box 6.0.4
 
 ## If you prefer to install everything from scratch
 ## Download <a href="https://liquabit.com/get/insallation.pdf">Step by Step installation</a>
