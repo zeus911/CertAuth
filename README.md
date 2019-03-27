@@ -1,8 +1,4 @@
-<h3><a href="https://ca.liquabit.com/">Demo site</a></h3>
-# Features:
-## Features
-### Features
-<h3>Features:</h3> 
+## Features:
 1. Certificate Server Requests (CSR/REQ).<br />
 2. Certificate with Subject Alternative Name.<br />
 3. Code Signing (Java, Microsoft Authenticode).<br />
@@ -12,8 +8,10 @@
 7. Check if CSR/Certificate/PrivateKey matches.<br />
 8. More TLS tools...
 
-<h3>Download <a href="https://mega.nz/#!GMZSSCDD">Virtual Machine (.OVA)</a></h3>
+## Download <a href="https://mega.nz/#!GMZSSCDD">Virtual Machine (.OVA)</a>
 <p>This VM is build with Oracle Virtual Box 6.0.4</p>
 
-<h3>If you prefer to install everything from scratch</h3>
-<h3>Download <a href="https://liquabit.com/get/insallation.pdf">Step by Step installation</a></h3>
+## If you prefer to install everything from scratch
+## Download <a href="https://liquabit.com/get/insallation.pdf">Step by Step installation</a>
+
+# <a href="https://ca.liquabit.com/">Demo site</a>
