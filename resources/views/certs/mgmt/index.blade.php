@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('content') 
+@section('content')
 
 <div class="container">
 
-    <h2>Certificates Management</h2>
+    <h2>Certificates Management 1</h2>
     <h5 class="text-primary"><strong>Total Nº of Certificates:</strong> <strong class="text-success">{{ $certsNumber }} </strong></h5>
 
         <table width="100%" class="table table-striped table-bordered" id="dashboard" cellspacing="0" nowrap>
@@ -28,9 +28,9 @@
                     <td>
                         {{ Form::open(['url' => 'certs/mgmt/details/', 'method' => 'post']) }}
                         {{csrf_field()}}
-                        <input class="sr-only" type="text" name="subjectCommonName" value="{{ $cert->subjectCommonName }}"> 
+                        <input class="sr-only" type="text" name="subjectCommonName" value="{{ $cert->subjectCommonName }}">
                         @if($errors->has('subjectCommonName'))
-                            {{ $errors->first('subjectCommonName') }} 
+                            {{ $errors->first('subjectCommonName') }}
                         @endif
                         {{ Form::token() }}
                         {{ Form::button('<i class="fa fa-plus" aria-hidden="true"></i> More Details', ['class' => 'btn btn-primary', 'type' => 'submit']) }}
