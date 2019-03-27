@@ -1,5 +1,7 @@
 <h3><a href="https://ca.liquabit.com/">Demo site</a></h3>
-## > Features:
+# Features:
+## Features
+### Features
 <h3>Features:</h3> 
 1. Certificate Server Requests (CSR/REQ).<br />
 2. Certificate with Subject Alternative Name.<br />
