@@ -8,10 +8,10 @@
 7. Check if CSR/Certificate/PrivateKey matches.<br />
 8. More TLS tools...
 
-## Download <a href="https://mega.nz/#!GMZSSCDD">Virtual Machine (.OVA)</a>
+### Download <a href="https://mega.nz/#!GMZSSCDD">Virtual Machine (.OVA)</a>
 > This VM is build with Oracle Virtual Box 6.0.4
 
-## If you prefer to install everything from scratch
-## Download <a href="https://liquabit.com/get/insallation.pdf">Step by Step installation</a>
+## Manual install instructions:
+### Download <a href="https://liquabit.com/get/step-by-step-installation.pdf">Step by Step installation</a>
 
 # <a href="https://ca.liquabit.com/">Demo site</a>
