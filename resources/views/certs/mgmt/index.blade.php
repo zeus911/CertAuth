@@ -3,7 +3,7 @@
 
 <div class="container">
 
-    <h2>Certificates Management 1</h2>
+    <h2>Certificates Management</h2>
     <h5 class="text-primary"><strong>Total Nº of Certificates:</strong> <strong class="text-success">{{ $certsNumber }} </strong></h5>
 
         <table width="100%" class="table table-striped table-bordered" id="dashboard" cellspacing="0" nowrap>
