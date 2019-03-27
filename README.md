@@ -1,4 +1,3 @@
-<h3><a href="https://lopeaa.github.io/CertAuth">Project Page</a></h3>
 <h3><a href="https://ca.liquabit.com/">Demo site</a></h3>
 
 <h3>Features:</h3> 
