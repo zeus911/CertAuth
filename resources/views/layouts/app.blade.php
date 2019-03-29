@@ -57,9 +57,10 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top">
-            <div class="container"> 
+            <div class="container">
                 <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
-                    <strong>{{ config('app.name', '') }} <span class="badge badge-light">PoC</span></strong>
+                    {{--  <strong>{{ config('app.name', '') }} <span class="badge badge-light">PoC</span></strong>  --}}
+                    <strong><span class="badge badge-light badge-lg">CertAuth PoC</span></strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -98,7 +99,7 @@
                             <div class="dropdown-menu dropdown-menu-left" aria-labelledby="authenticode">
                                     <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-file-signature"></i><strong> Sign a Microsoft Archive </strong></a>
                             </div>
-                        </li>    
+                        </li>
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
@@ -113,17 +114,17 @@
                                     <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-plus"></i><strong class="text-primary"> Create Keystore </strong></li></a>
                             </div>
                         </li>
-                    </ul>         
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> 
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> 
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -154,7 +155,7 @@
             @yield('content')
         </main>
     </div>
-    <!-- Scripts --> 
+    <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script type="text/javascript">
         var first= $.noConflict(true);
