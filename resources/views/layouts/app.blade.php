@@ -104,15 +104,15 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="converter" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre><strong><i class="fas fa-tools"></i> SSL Tools</strong></a>
-                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="converter">
+                            <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="converter">
                                 <h6 class="dropdown-header"><strong>CERTIFICATE CONVERTER</strong></h6>
-                                    <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert to PFX/P12 </strong></a>
-                                    <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert PEM to DER </strong></a>
-                                    <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert DER to PEM </strong></a>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert to PFX/P12 </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert PEM to DER </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert DER to PEM </strong></a></li>
                                     <div class="dropdown-divider"></div>
-                                <h6 class="dropdown-header"><strong>JAVA KEYSTORE</strong></h6>
-                                    <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-plus"></i><strong class="text-primary"> Create Keystore </strong></li></a>
-                            </div>
+                                    <h6 class="dropdown-header"><strong>JAVA KEYSTORE</strong></h6>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Create Keystore </strong></a></li>
+                            </ul>
                         </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
