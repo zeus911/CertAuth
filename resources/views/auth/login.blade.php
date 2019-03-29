@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-             <div class="card-header">{{ __('CertAuth') }} <span class="badge badge-light">PoC</span></div>
-
+             {{--  <div class="card-header">{{ __('CertAuth') }} <span class="badge badge-light">PoC</span></div>  --}}
+             <div class="card-header"><h2><span class="badge badge-light">CertAuth PoC</span></h2></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -41,10 +41,10 @@
 
                         <div class="form-group row">
                                 <label for="otc" class="col-md-4 col-form-label text-md-right"><i class="fas fa-key"></i> {{ __('') }}</label>
-    
+
                                 <div class="col-md-6">
                                     <input id="otc" type="password" class="form-control{{ $errors->has('otc') ? ' is-invalid' : '' }}" placeholder="One-Time-Code" name="otc" required>
-    
+
                                     @if ($errors->has('otc'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('otc') }}</strong>
@@ -52,7 +52,7 @@
                                     @endif
                                 </div>
                             </div>
-    
+
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
@@ -78,7 +78,7 @@
                                     </a>
                                 @endif  --}}
                             </div>
-                        </div> 
+                        </div>
                         <div><i class="fas fa-code-branch"></i> 0.2</div>
                     </form>
                 </div>
