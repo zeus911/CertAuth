@@ -60,7 +60,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
                     {{--  <strong>{{ config('app.name', '') }} <span class="badge badge-light">PoC</span></strong>  --}}
-                    <strong><span class="badge badge-light badge-lg">CertAuth PoC</span></strong>
+                    <h1><span class="badge badge-light">CertAuth PoC</span></h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
