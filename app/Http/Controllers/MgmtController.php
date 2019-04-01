@@ -28,7 +28,10 @@ class MgmtController extends Controller
         foreach ($certs as $cert) {
          $id = $cert->id;
          $subjectCommonName = $cert->subjectCommonName;
-         $validTo = $cert->validTo_time_t;
+
+         $parse_cert = $cert->publicKey;
+         dd($parse_cert);
+         $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c');
          $today = new DateTime(today());
          $validToDate = new DateTime($validTo);
          $daysLeftToExpire = (string)$validToDate->diff($today)->days;
