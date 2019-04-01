@@ -13,7 +13,7 @@ class MgmtController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $certs = Cert::all();
@@ -24,17 +24,16 @@ class MgmtController extends Controller
         $certs =  Cert::where('subjectCommonName','like','%'.$searchCerts.'%')
         ->orderBy('id')
         ->paginate('200');
-       
+
         foreach ($certs as $cert) {
          $id = $cert->id;
          $subjectCommonName = $cert->subjectCommonName;
-         //
-        //  $validTo = $cert->validTo_time_t;
-        //  $today = new DateTime(today());
-        //  $validToDate = new DateTime($validTo);
-        //  $daysLeftToExpire = (string)$validToDate->diff($today)->days;
-        //  Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
-   
+         $validTo = $cert->validTo_time_t;
+         $today = new DateTime(today());
+         $validToDate = new DateTime($validTo);
+         $daysLeftToExpire = (string)$validToDate->diff($today)->days;
+         Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
+
          // calculate days left to expire and update DB.
          $validTo_time_t = $cert->validTo_time_t;
          if ($validTo_time_t != null){
@@ -62,11 +61,11 @@ class MgmtController extends Controller
          } else {
             $status = $cert->status;
          }
-        } 
+        }
          return view ('certs.mgmt.index', array(
           'certs' => $certs,
           'certsNumber' => $certsNumber
-          ));      
+          ));
     }
 
     public function details()
@@ -78,7 +77,7 @@ class MgmtController extends Controller
       // Getting Collection from Certs.
       $certs = Cert::where('subjectCommonName', $subjectCommonName)->get()->first();
 
-      // Getting data from DB. 
+      // Getting data from DB.
       $id = $certs->id;
       $certificateServerRequest = $certs->certificateServerRequest;
       $publicKey = $certs->publicKey;
@@ -213,7 +212,7 @@ class MgmtController extends Controller
           return view('certs.mgmt.update', array(
           'subjectCommonName' => $_POST['subjectCommonName']));
       }
-    }  
+    }
 
     public function updated()
     {
@@ -225,14 +224,14 @@ class MgmtController extends Controller
         $publicKey = $_POST['publicKey'];
         $privateKey = $_POST['privateKey'];
         $comments = $_POST['comments'];
-        
+
         // if "certificateServerRequest" updated.
         if(isset($_POST['certificateServerRequest'])){
           Cert::where('subjectCommonName', $subjectCommonName)->update(['certificateServerRequest' => $certificateServerRequest]);
         }
 
         // If "publicKey" updated, get certificate data to update DB.
-        if($publicKey != '') { 
+        if($publicKey != '') {
           $certParser = openssl_x509_parse($publicKey);
           //dd($certParser);
           $name = $certParser['name'];
@@ -313,24 +312,24 @@ class MgmtController extends Controller
             'signatureTypeLN' => $signatureTypeLN,
             'signatureTypeNID' => $signatureTypeNID,
             'purposes' => $purposes,
-            'extensionsBasicConstraints' => $extensionsBasicConstraints, 
+            'extensionsBasicConstraints' => $extensionsBasicConstraints,
             //'extensionsNsCertType' => $extensionsNsCertType,
             'extensionsKeyUsage' => $extensionsKeyUsage,
             'extensionsExtendedKeyUsage' => $extensionsExtendedKeyUsage,
             //'extensionsSubjectKeyIdentifier' => $extensionsSubjectKeyIdentifier,
             'extensionsAuthorityKeyIdentifier' => $extensionsAuthorityKeyIdentifier,
             'extensionsSubjectAltName' => $extensionsSubjectAltName,
-            'extensionsCrlDistributionPoints' => $extensionsCrlDistributionPoints, 
+            'extensionsCrlDistributionPoints' => $extensionsCrlDistributionPoints,
             'certificateServerRequest' => $certificateServerRequest,
-            'publicKey' => $publicKey, 
-            'privateKey' => $privateKey, 
-            'p12' => $p12, 
-            'status' => $status, 
-            'expiryDate' => $expiryDate, 
+            'publicKey' => $publicKey,
+            'privateKey' => $privateKey,
+            'p12' => $p12,
+            'status' => $status,
+            'expiryDate' => $expiryDate,
             //'email' => $email,
             'comments' => $comments
             ]);
-   
+
         }
         if($privateKey != ''){
           Cert::where('subjectCommonName', $subjectCommonName)->update(['privateKey' => $privateKey]);
@@ -339,7 +338,7 @@ class MgmtController extends Controller
         return view('certs.mgmt.updated', array('subjectCommonName' => $subjectCommonName));
         }
       }
-  
+
     public function delete()
     {
        if(isset($_POST['subjectCommonName']) &&
@@ -359,7 +358,7 @@ class MgmtController extends Controller
         $subjectCommonName = $_POST['subjectCommonName'];
 
         // When cert is DELETED has to be DELETED in public-keys  as well.
-        FILE::delete(storage_path('public-keys/' . $subjectCommonName . '.crt')); 
+        FILE::delete(storage_path('public-keys/' . $subjectCommonName . '.crt'));
         FILE::delete(storage_path('public-keys/' . $subjectCommonName . '.cer'));
 
         // Delete DB table.
@@ -392,7 +391,7 @@ class MgmtController extends Controller
           $key_status = 'Found';
         } else {
           $key_status = 'Not found';
-        }     
+        }
 
         // Checks if a private key matches certificate.
         $keyMatchesCert = openssl_x509_check_private_key($publicKey, $privateKey);
@@ -405,7 +404,7 @@ class MgmtController extends Controller
           $tmp_storage = '/tmp/';
           $_tempcsr = file_put_contents($tmp_storage . 'temp.csr', $certificateServerRequest);
           $_tempcer = file_put_contents($tmp_storage . 'temp.cer', $publicKey);
-          $certSHA2sum = shell_exec("openssl x509 -in /tmp/temp.cer -pubkey -noout -outform pem | sha256sum 2>&1"); 
+          $certSHA2sum = shell_exec("openssl x509 -in /tmp/temp.cer -pubkey -noout -outform pem | sha256sum 2>&1");
           $csrSHA2sum = shell_exec("openssl req -in /tmp/temp.csr -pubkey -noout -outform pem | sha256sum 2>&1");
 
         if($certSHA2sum === $csrSHA2sum){
@@ -427,5 +426,5 @@ class MgmtController extends Controller
     {
           return view('certs.mgmt.import');
     }
-    
+
 }
