@@ -31,8 +31,7 @@ class MgmtController extends Controller
 
          $publicKey = $cert->publicKey;
          $parse_cert = openssl_x509_parse($publicKey);
-         $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c');
-dd($validTo);
+         $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c'); // Output: "2018-10-03T12:00:00+00:00"
          $today = new DateTime(today());
          $validToDate = new DateTime($validTo);
          $daysLeftToExpire = (string)$validToDate->diff($today)->days;
