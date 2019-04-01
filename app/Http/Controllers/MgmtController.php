@@ -29,7 +29,8 @@ class MgmtController extends Controller
          $id = $cert->id;
          $subjectCommonName = $cert->subjectCommonName;
 
-         $parse_cert = $cert->publicKey;
+         $publicKey = $cert->publicKey;
+         $parse_cert = openssl_x509_parse($publicKey);
          $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c');
 dd($validTo);
          $today = new DateTime(today());
