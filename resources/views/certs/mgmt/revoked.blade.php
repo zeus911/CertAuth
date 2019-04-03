@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    
+
     <H2>Certificate Revocation Details</H2>
     <h5>Common Name: <strong class="text-primary">{{ $subjectCommonName}}</strong></h5>
     <h5>Issuer: <strong class="text-primary">{{ $issuerCN }}</strong></h4>
@@ -29,7 +29,7 @@
                                 <th><i class="fas fa-signature"></i> Revoked date (UTC)</th>
                                 <td><strong class="text-primary"> {{ $updated_at }} </strong></td>
                             </tr>
-                                <th><i class="fas fa-key"></i> DB Status</th>
+                                <th><i class="fas fa-database"></i> DB Status</th>
                                 <td><strong class="text-success"> {{ $status }} </strong></td>
                             </tr>
                             <tr>
@@ -46,13 +46,13 @@
                             <td>
                                 {{ Form::open(['url' => 'certs/mgmt/', 'files' => 'true', 'method' => 'get']) }}
                                 {{ Form::token() }}
-                                {{ Form::submit('No, go back to management', ['class' => 'btn btn-secondary']) }}
+                                {{ Form::submit('Go back to management', ['class' => 'btn btn-secondary']) }}
                                 {{ Form::close() }}
-                            </td>              
+                            </td>
                         </div>
                  </div>
             </div>
-    
+
         </div>
 </div>
 @endsection
