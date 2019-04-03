@@ -45,8 +45,7 @@ class RootCRLController extends Controller
     {
 
         $password = $request::input('password');
-        //$crlPath = storage_path('root.ca.crl');
-        $crlPath = "/opt/ca/root/crl/root.crl.crl";
+        $crlPath = storage_path('root.crl.crl');
         $updateCRL = shell_exec("sudo openssl ca -config /etc/ssl/openssl.cnf -gencrl -out $crlPath -key $password -batch 2>&1");
 
         return view ('rootcrl.updateCRL', array(
