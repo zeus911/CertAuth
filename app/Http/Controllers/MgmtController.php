@@ -165,11 +165,11 @@ class MgmtController extends Controller
         }
       }
       // If cert exist calculate days left to expire and update expiryDate in DB.
-      $today = new DateTime(today());
+/*       $today = new DateTime(today());
       $validToDate = new DateTime($validTo);
       $daysLeftToExpire = (string)$validToDate->diff($today)->days;
       Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
-
+ */
       return view('certs.mgmt.details', array(
           'id' => $id,
           'subjectCommonName' => $subjectCommonName,
