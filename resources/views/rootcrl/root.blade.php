@@ -6,19 +6,19 @@
     <H2>Root & Intermediate certificates</H2>
 <!--    	{{ Form::open(['url' => 'rootcrl/getRoot', 'method' => 'POST', 'class' => 'form']) }}
     	<div class="form-group">
-       	{{ Form::submit('TRAGSA CA G2 Root certificate', ['class' => 'btn btn-primary btn-lg']) }}
+       	{{ Form::submit('LIQUABit Root certificate', ['class' => 'btn btn-primary']) }}
         </div>
         {{ Form::close() }}
-    	
+
     	{{ Form::open(['url' => 'https://knowledge.symantec.com/support/ssl-certificates-support/index?page=content&id=SO4785', 'method' => 'GET', 'target' => '_blank', 'class' => 'form']) }}
     	<div class="form-group">
        	{{ Form::submit('Symantec Root / Intermediate certificates', ['class' => 'btn btn-primary btn-lg']) }}
         </div>
         {{ Form::close() }}
-    	
+
     	{{ Form::open(['url' => '', 'method' => 'POST', 'target' => '_blank', 'class' => 'form']) }}
     	<div class="form-group">
-       	{{ Form::submit('FirmaProfesional Root Intermediate certificates', ['class' => 'btn btn-primary btn-lg']) }}
+       	{{ Form::submit('FirmaProfesional Root Intermediate certificates', ['class' => 'btn btn-primary']) }}
         </div>
         {{ Form::close() }}
 -->
@@ -30,13 +30,13 @@
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
           <i class="fa fa-chevron-down" aria-hidden="true"></i>
-			TRAGSA CA G2</a>
+			LIQUABit Root Certificate</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">{{ Form::open(['url' => 'rootcrl/getRootTRAGSA', 'method' => 'POST', 'class' => 'form']) }}
     	<div class="form-group">
-       	{{ Form::submit('Download TRAGSA CA G2 Root certificate', ['class' => 'btn btn-primary btn-md']) }}
+       	{{ Form::submit('Download LIQUABit Root certificate', ['class' => 'btn btn-primary']) }}
         </div>
         {{ Form::close() }}</div>
       </div>
@@ -116,7 +116,7 @@
         </div>
 
       </div>
-    </div>  
+    </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -142,7 +142,7 @@
 
 
     </div>
-  </div> 
+  </div>
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">
