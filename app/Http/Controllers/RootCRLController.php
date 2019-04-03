@@ -27,13 +27,13 @@ class RootCRLController extends Controller
     {
       $headers = array('Content_Type: application/x-download',);
       //return Response::download(storage_path('cert.ca.cer'), 'cert.ca.cer', $headers)->deleteFileAfterSend(true);
-      return Response::download(storage_path('root.cert2.pem'), 'root.cert2.pem', $headers)->deleteFileAfterSend(true);
+      return Response::download(storage_path('root.cert.cer'), 'root.cert.cer', $headers);
     }
 
     public function getRootLE()
     {
       $headers = array('Content_Type: application/x-download',);
-      return Response::download(storage_path('le.ca.cer'), 'le.ca.cer', $headers)->deleteFileAfterSend(true);
+      return Response::download(storage_path('le.ca.cer'), 'le.ca.cer', $headers);
     }
 
     public function crl()
@@ -56,7 +56,7 @@ class RootCRLController extends Controller
     public function getCRL()
     {
       $headers = array('Content_Type: application/x-download',);
-      return Response::download(storage_path('ca-g2.crl'), 'ca-g2.crl', $headers)->deleteFileAfterSend(true);
+      return Response::download(storage_path('ca-g2.crl'), 'ca-g2.crl', $headers);
     }
 
     public function authenticode()
