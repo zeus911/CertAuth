@@ -12,13 +12,13 @@
         </div>
 
         <div class="form-group">
-            {{ Form::submit('Update TRAGSA CA G2 CRL', ['class' => 'btn btn-primary btn-md']) }}
+            {{ Form::submit('Update CRL', ['class' => 'btn btn-primary']) }}
         </div>
         {{ Form::close() }}
     <H3>Download CRL</H3>
     {{ Form::open(['url' => 'rootcrl/getCRL', 'method' => 'POST', 'class' => 'form']) }}
         <div class="form-group">
-            {{ Form::submit('Get TRAGSA CA G2 CRL', ['class' => 'btn btn-primary btn-md']) }}
+            {{ Form::submit('Get CRL', ['class' => 'btn btn-primary']) }}
         </div>
         {{ Form::close() }}
     </div>

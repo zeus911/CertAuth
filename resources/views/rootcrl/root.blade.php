@@ -12,7 +12,7 @@
 
     	{{ Form::open(['url' => 'https://knowledge.symantec.com/support/ssl-certificates-support/index?page=content&id=SO4785', 'method' => 'GET', 'target' => '_blank', 'class' => 'form']) }}
     	<div class="form-group">
-       	{{ Form::submit('Symantec Root / Intermediate certificates', ['class' => 'btn btn-primary btn-lg']) }}
+       	{{ Form::submit('Symantec Root / Intermediate certificates', ['class' => 'btn btn-primary']) }}
         </div>
         {{ Form::close() }}
 
@@ -155,7 +155,7 @@
   <div id="collapse4" class="panel-collapse collapse">
     <div class="panel-body">{{ Form::open(['url' => 'rootcrl/getRootLE', 'method' => 'POST', 'class' => 'form']) }}
   <div class="form-group">
-    {{ Form::submit('Download Let´s Encrypt Root / Intermediate certificates', ['class' => 'btn btn-primary btn-md']) }}
+    {{ Form::submit('Download Let´s Encrypt Root / Intermediate certificates', ['class' => 'btn btn-primary']) }}
     </div>
     {{ Form::close() }}</div>
   </div>
