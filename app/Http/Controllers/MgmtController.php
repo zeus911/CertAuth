@@ -28,9 +28,7 @@ class MgmtController extends Controller
         foreach ($certs as $cert) {
          $id = $cert->id;
          $subjectCommonName = $cert->subjectCommonName;
-
          // calculate days left to expire and update DB.
-         //$validTo_time_t = $cert->validTo_time_t;
          if ($cert->validTo_time_t != null){
          $validTo_time_t = $cert->validTo_time_t;
          $validTo = date_create( '@' .  $validTo_time_t)->format('c');
@@ -170,7 +168,7 @@ class MgmtController extends Controller
       $today = new DateTime(today());
       $validToDate = new DateTime($validTo);
       $daysLeftToExpire = (string)$validToDate->diff($today)->days;
-      //Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
+      Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
 
       return view('certs.mgmt.details', array(
           'id' => $id,
