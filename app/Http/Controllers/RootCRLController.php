@@ -45,7 +45,7 @@ class RootCRLController extends Controller
     {
 
         $password = $request::input('password');
-        $crlPath = storage_path('ca-g2.crl');
+        $crlPath = storage_path('root.ca.crl');
         $updateCRL = shell_exec("sudo openssl ca -config /opt/CA/openssl.cnf -gencrl -out $crlPath -key $password -batch 2>&1");
 
         return view ('rootcrl.updateCRL', array(
@@ -56,7 +56,7 @@ class RootCRLController extends Controller
     public function getCRL()
     {
       $headers = array('Content_Type: application/x-download',);
-      return Response::download(storage_path('ca-g2.crl'), 'ca-g2.crl', $headers);
+      return Response::download(storage_path('root.ca.crl'), 'root.ca.crl', $headers);
     }
 
     public function authenticode()
