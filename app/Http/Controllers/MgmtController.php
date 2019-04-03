@@ -164,12 +164,12 @@ class MgmtController extends Controller
           $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c');
         }
       }
-      // If cert exist calculate days left to expire and update expiryDate in DB.
-/*       $today = new DateTime(today());
-      $validToDate = new DateTime($validTo);
-      $daysLeftToExpire = (string)$validToDate->diff($today)->days;
-      Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
- */
+        // If cert exist calculate days left to expire and update expiryDate in DB.
+        $today = new DateTime(today());
+        $validToDate = new DateTime($validTo);
+        $daysLeftToExpire = (string)$validToDate->diff($today)->days;
+        //Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
+
       return view('certs.mgmt.details', array(
           'id' => $id,
           'subjectCommonName' => $subjectCommonName,
