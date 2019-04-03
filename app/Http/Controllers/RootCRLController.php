@@ -27,7 +27,7 @@ class RootCRLController extends Controller
     {
       $headers = array('Content_Type: application/x-download',);
       //return Response::download(storage_path('cert.ca.cer'), 'cert.ca.cer', $headers)->deleteFileAfterSend(true);
-      return Response::download(storage_path('cert.ca.cer'), 'root.cert.pem', $headers)->deleteFileAfterSend(true);
+      return Response::download(storage_path('root.cert.pem'), 'root.cert.pem', $headers)->deleteFileAfterSend(true);
     }
 
     public function getRootLE()
