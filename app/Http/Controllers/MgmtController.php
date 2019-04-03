@@ -30,11 +30,12 @@ class MgmtController extends Controller
          $subjectCommonName = $cert->subjectCommonName;
          // calculate days left to expire and update DB.
          if ($cert->validTo_time_t != null){
-         $validTo_time_t = $cert->validTo_time_t;
-         $validTo = date_create( '@' .  $validTo_time_t)->format('c');
-         $today = new DateTime(today());
-         $validToDate = new DateTime($validTo);
-         $daysLeftToExpire = (string)$validToDate->diff($today)->days;
+          $parse_cert = openssl_x509_parse($cert->publicKey);
+          dd($parse_cert);
+          $today = new DateTime(today());
+          $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c');
+          $validToDate = new DateTime($validTo);
+          $daysLeftToExpire = (string)$validToDate->diff($today)->days;
           Cert::where('subjectCommonName', $subjectCommonName)->update(['expiryDate' => $daysLeftToExpire]);
          }
          if (empty($cert->publicKey)){
