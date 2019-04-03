@@ -237,7 +237,7 @@ class RenewRevokeController extends Controller
             $serialNumber = $certs->serialNumber;
             $updated_at = $certs->updated_at;
             $certfile = storage_path($serialNumber . '.cer');
-            $crlFile = storage_path('root.ca.crl');
+            $crlFile = storage_path('root.crl.crl');
 
             // Return error if there is no certificate in DB.
             if ($certs->publicKey == null)
