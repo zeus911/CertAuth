@@ -71,14 +71,14 @@ class RenewRevokeController extends Controller
 
     public function getRenewed()
     {
-        if (isset($_POST['subjectCommonName']) && 
+        if (isset($_POST['subjectCommonName']) &&
             isset($_POST['validityPeriod']) &&
             isset($_POST['password']) &&
 
             !empty($_POST['subjectCommonName'])&&
             !empty($_POST['validityPeriod'])&&
             !empty($_POST['password']))
-        { 
+        {
           $subjectCommonName = $_POST['subjectCommonName'];
           $validityPeriod = $_POST['validityPeriod'];
 
@@ -97,7 +97,7 @@ class RenewRevokeController extends Controller
 
           // Translate certificate ExtendedKeyUsage to openssl section names
           if($extensionsExtendedKeyUsage == 'TLS Web Server Authentication, TLS Web Client Authentication'){
-            $keyUsage = 'serverAuth_clientAuth'; 
+            $keyUsage = 'serverAuth_clientAuth';
           } elseif (extensionsExtendedKeyUsage == 'TLS Web Server Authentication') {
             $keyUsage = 'serverAuth';
           } elseif (extensionsExtendedKeyUsage == 'TLS Web Client Authentication') {
@@ -107,7 +107,7 @@ class RenewRevokeController extends Controller
           }
 
         // Clean DNS entries.
-        shell_exec("sudo /opt/subjectAltNameRemoval.sh 2>&1");          
+        shell_exec("sudo /opt/subjectAltNameRemoval.sh 2>&1");
 
           // Open Config file.
         $data = file_get_contents($config);
@@ -153,7 +153,7 @@ class RenewRevokeController extends Controller
 
               // ZIP the certificate, key and CA. Saved in storage folder.
               $zip = glob(storage_path('cert.*'));
-              Zipper::make(storage_path('archives/' . $subjectCommonName . '.zip'))->add($zip); 
+              Zipper::make(storage_path('archives/' . $subjectCommonName . '.zip'))->add($zip);
               Zipper::close();
 
               // Clean DNS entries.
@@ -181,26 +181,26 @@ class RenewRevokeController extends Controller
               $headers = array('Content_Type: application/x-download',);
                 return Response::download(storage_path('archives/' . $subjectCommonName . '.zip'), $subjectCommonName . '.zip', $headers)->deleteFileAfterSend(true);
 
-            } 
-        }   
-    } 
+            }
+        }
+    }
 
     public function revoke()
     {
-       if  (isset($_POST['subjectCommonName']) && !empty($_POST['subjectCommonName'])) 
+       if  (isset($_POST['subjectCommonName']) && !empty($_POST['subjectCommonName']))
        {
             $subjectCommonName = $_POST['subjectCommonName'];
             $certs = Cert::where('subjectCommonName', $subjectCommonName)->get()->first();
             // Return error if the certificate has already been revoked.
-            $checkStatus = $certs->status; 
+            $checkStatus = $certs->status;
 
           if($checkStatus == 'Revoked')
             {
               return view('errors.ooops', array(
-                'status' => 'certificate is already revoked')); 
+                'status' => 'certificate is already revoked'));
 
             } elseif ($checkStatus == 'Expired')
-            {    
+            {
               return view('errors.ooops', array(
                 'status' => 'certificate is expired'));
 
@@ -216,7 +216,7 @@ class RenewRevokeController extends Controller
       }
     }
 
-    public function revoked() 
+    public function revoked()
     {
        if  (isset($_POST['subjectCommonName']) &&
              isset($_POST['reason']) &&
@@ -259,7 +259,7 @@ class RenewRevokeController extends Controller
             $revoke_bad_password = substr($revoke, 45, 30);
             $revoke_already_revoked = substr($revoke, 52, 15);
             $revoke_ok = substr($revoke, -18, 17);
-            
+
             if($revoke_bad_password == 'unable to load CA private key'){
               return view('errors.ooops', array(
                 'status' => "password is not correct"
@@ -291,14 +291,14 @@ class RenewRevokeController extends Controller
 
             // Update CRL.
             $updateCRL = shell_exec('sudo openssl ca -gencrl -config $config -key $password -out $crlFile -batch 2>&1');
-dd($config, $password, $crlFile, $updateCRL);
+
             // Parsing x509 attributes.
             $parse_cert = openssl_x509_parse($publicKey);
             $issuer = $parse_cert['issuer'];
             $issuerCN = $issuer['CN'];
             $validFrom = date_create( '@' .  $parse_cert['validFrom_time_t'])->format('c');
             $validTo = date_create( '@' .  $parse_cert['validTo_time_t'])->format('c');
-  
+
             return view ('certs.mgmt.revoked', array(
               'subjectCommonName' => $subjectCommonName,
               'extensionsSubjectAltName' => $extensionsSubjectAltName,
@@ -312,12 +312,12 @@ dd($config, $password, $crlFile, $updateCRL);
               'status' => $status,
               'status2' => $status2
               ));
-                    
+
               } else {
               return view ('errors.ooops', array(
                 'status' => $revoke));
             }
-               
+
         }
 
       }
