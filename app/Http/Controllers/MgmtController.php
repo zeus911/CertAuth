@@ -31,7 +31,7 @@ class MgmtController extends Controller
 
          // calculate days left to expire and update DB.
          //$validTo_time_t = $cert->validTo_time_t;
-         if ($$cert->validTo_time_t != null){
+         if ($cert->validTo_time_t != null){
          $validTo_time_t = $cert->validTo_time_t;
          $validTo = date_create( '@' .  $validTo_time_t)->format('c');
          $today = new DateTime(today());
