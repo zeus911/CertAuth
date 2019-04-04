@@ -7,8 +7,10 @@
     <div class="container">
             <div class="btn-toolbar mb-3" role="toolbar">
                     <div class="btn-group mr-2" role="group">
+                        <br />
                     <h5 class="">Update CRL</h5>
                     <td>
+                            <br />
                     {{ Form::open(['url' => 'rootcrl/updateCRL', 'method' => 'post', 'class' => 'form']) }}
                     {{ Form::password('password', ['placeholder' => 'CA Password', 'class' => 'form-control' ]) }}
                     {{ Form::token() }}
