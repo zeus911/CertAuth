@@ -116,7 +116,7 @@ TXoKcfB8UFRI5KBGbyw=
 
             $headers = array('Content_Type: application/x-download',);
 
-           return Response::download(storage_path('archives/ . '$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
+           return Response::download(storage_path('archives/' . $subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
       	}
 
     }
@@ -140,7 +140,7 @@ TXoKcfB8UFRI5KBGbyw=
             $subjectCommonName = $subject['subject']['CN'];
 
             // P12 storage path.
-            $p12 = storage_path('archives/ . '$subjectCommonName . '.p12');
+            $p12 = storage_path('archives/' . $subjectCommonName . '.p12');
 
             // Arguments to pass to the P12 archive.
             $p12args = array (
