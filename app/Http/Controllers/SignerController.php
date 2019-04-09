@@ -21,49 +21,49 @@ class SignerController extends Controller
 
   	public function jar()
    	{
-        return view ('signer.jar');     
+        return view ('signer.jar');
 
     }
 
     public function signJAR(Request $request)
     {
-        if ($request::hasFile('jar')) 
+        if ($request::hasFile('jar'))
       {
         $storagePath = storage_path();
         $jar = $request::file('jar');
         $password = $request::input('password');
-        $jar_name = $request::file('jar')->getClientOriginalName();
-        $jar_uploaded = $jar->move($storagePath . '/tmp', $jar . '.jar');
+        $jarName = $request::file('jar')->getClientOriginalName();
+        $jarUploaded = $jar->move($storagePath . '/tmp', $jar . '.jar');
       }
 
-        // Variables to exec jarsigner.
+        // Variables for jarsigner.
 		$keystore = "/opt/keystore/symantec_cs.jks";
 		$keystorealias = "tragsa";
-		$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec. 
+		$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec.
 
-        $jarsigner = shell_exec("jarsigner -tsa $tsaurl -keystore $keystore -storepass $password -signedjar $storagePath/$jar_name.signed $jar_uploaded $keystorealias 2>&1");
+        $jarsigner = shell_exec("jarsigner -tsa $tsaurl -keystore $keystore -storepass $password -signedjar $storagePath/$jarName.signed $jarUploaded $keystorealias 2>&1");
 
-        File::delete($jar_uploaded);
+        File::delete($jarUploaded);
 
         return view ('signer.signJAR', array(
-            'jar_name' => $jar_name,
+            'jarName' => $jarName,
             'result' => $jarsigner )
-        );     
+        );
 
     }
 
     public function getJAR()
    {
-      if (isset($_POST['jar_name']) && !empty($_POST['jar_name']) );
+      if (isset($_POST['jarName']) && !empty($_POST['jarName']) );
 
-          $jar_name = $_POST['jar_name'];
+          $jarName = $_POST['jarName'];
 
           // Update field 'JAR in DB.
           //Cert::where('dstalias', $dstalias)->update(['keystore' => $dstalias]);
 
           $headers = array('Content_Type: application/x-download',);
-          
-        return Response::download(storage_path($jar_name . '.signed'), $jar_name . '.signed', $headers)->deleteFileAfterSend(true);
+
+        return Response::download(storage_path($jarName . '.signed'), $jarName . '.signed', $headers)->deleteFileAfterSend(true);
 
    }
 
@@ -71,11 +71,11 @@ class SignerController extends Controller
    	{
 
             return view ('signer.authenticode');
-    }   
+    }
 
         public function signAuthenticode(Request $request)
     {
-        if ($request::hasFile('archive')) 
+        if ($request::hasFile('archive'))
       {
         $storagePath = storage_path();
         $archive = $request::file('archive');
@@ -88,7 +88,7 @@ class SignerController extends Controller
         // Variables to exec jarsigner.
 		$keystore = "/opt/keystore/symantec_cs.p12";
 		$keystorealias = "tragsa";
-		//$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec (Java). 
+		//$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec (Java).
     	$tsaurl = "http://timestamp.verisign.com/scripts/timstamp.dll"; // Timestamp Server used by Symantec (Authenticode).
 
         $osslsigncode = shell_exec("osslsigncode sign -pkcs12 $keystore -pass $password -h sha2 -t $tsaurl -in $archive_uploaded -out $storagePath/$archive_name.signed 2>&1");
@@ -99,13 +99,13 @@ class SignerController extends Controller
             'archive_name' => $archive_name,
             'archive_type' => $archive_type,
             'result' => $osslsigncode )
-        );     
+        );
 
     }
-     
+
     public function getAuthenticode(Request $request)
    {
-      
+
           $archive_name = $request::input('archive_name');
           $archive_type = $request::input('archive_type');
 
@@ -113,7 +113,7 @@ class SignerController extends Controller
           //Cert::where('dstalias', $dstalias)->update(['keystore' => $dstalias]);
 
           $headers = array('Content_Type: application/x-download',);
-          
+
         return Response::download(storage_path($archive_name . '.signed'), $archive_name . $archive_type, $headers)->deleteFileAfterSend(true);
 
    }
@@ -125,8 +125,8 @@ class SignerController extends Controller
 
       return View('signer.search', array(
         'archives' => $archives ));
-   } 
-     
+   }
+
    public function results(Request $request)
    {
 

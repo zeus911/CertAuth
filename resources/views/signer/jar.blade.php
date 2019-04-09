@@ -26,7 +26,7 @@
 
         <div class="form-group">
             {{ Form::token() }}
-            {{ Form::submit('Submit Data', ['class' => 'btn btn-primary btn-md']) }}
+            {{ Form::submit('Sign JAR Archive', ['class' => 'btn btn-primary']) }}
         </div>
     {{ Form::close() }}
         </div>
