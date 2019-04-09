@@ -4,7 +4,7 @@
 
 <div class="container">
     <H2>Your archive {{ $jarName }} has been:</H2>
-    <H3 class="text-info">{{ $result }}</H3>
+    <H3 class="">{{ $result }}</H3>
     <div class="container">
         {{ Form::open(['url' => 'signer/getJAR', 'method' => 'post']) }}
         <input type="hidden" name="jarName" value="{{ $jarName }}">
