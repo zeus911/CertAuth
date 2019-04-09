@@ -4,7 +4,7 @@
 
 <div class="container">
         <H2>Your archive {{ $jarName }} has been:</H2>
-    <div class="alert alert-primary" role="alert">
+    <div class="alert alert-light" role="alert">
         <H3 class="">{{ $result }}</H3>
     </div>
     <div class="container">
