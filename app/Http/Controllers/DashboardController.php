@@ -53,7 +53,7 @@ class DashboardController extends Controller
         $IssuerCNLE2 = Cert::where('issuerCN', 'like', '%DST%')->count();
 
         $certs_issued_by = new CertsIssuedBy;
-        $certs_issued_by->labels(['TRAGSA CA G2', 'Firma Profesional', 'DigiCert', 'Symantec', 'Verisign', "Let's Encrypt", "DST Root CA X3"]);
+        $certs_issued_by->labels(['LIQUABit', 'Firma Profesional', 'DigiCert', 'Symantec', 'Verisign', "Let's Encrypt", "DST Root CA X3"]);
         $certs_issued_by->dataset('Nº of Issued By each CA', 'bar', [$IssuerCNLB, $IssuerCNFP, $IssuerCNDC, $IssuerCNSY, $IssuerCNVE, $IssuerCNLE1, $IssuerCNLE2 ])
         ->color(['#ff8000', '#3333ff', '#ff8000', '#3333ff', '#ff8000', '#3333ff']);
 
