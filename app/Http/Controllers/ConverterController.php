@@ -28,7 +28,7 @@ class ConverterController extends Controller
     		!empty($_POST['subjectCommonName']) );
         {
             $subjectCommonName = $_POST['subjectCommonName'];
-        
+
             // if cert or key don´t exist, return ooops.blade.php
             $cert = Cert::where('subjectCommonName', $subjectCommonName)->get()->first();
             if($cert->publicKey == null OR $cert->privateKey == 'We do not have the key becouse it has been generated in another device.' ){
@@ -37,7 +37,7 @@ class ConverterController extends Controller
             } else {
                 return view('converter.createP12', array(
                       'subjectCommonName' => $subjectCommonName) );
-            }        
+            }
         }
     }
 
@@ -70,7 +70,7 @@ class ConverterController extends Controller
             $subjectCommonName = $cert->subjectCommonName;
 
             // P12 storage path.
-            $p12 = storage_path($subjectCommonName . '.p12');
+            $p12 = storage_path(archives/$subjectCommonName . '.p12');
 
             // CACert storage path.
             //$cacert = file(storage_path('cert.ca.cer'));
@@ -99,7 +99,7 @@ XlRXg40mdjehEK9dwNMnD2YGGP4vpeyY3/72FJ+RxWwr1yF3p5cmLdY1LIdGBiIf
 TXoKcfB8UFRI5KBGbyw=
 -----END CERTIFICATE-----
 ');
-            
+
             // Arguments to pass to the P12 archive.
             $p12args = array (
               'extracerts' => $cacert,
@@ -115,9 +115,9 @@ TXoKcfB8UFRI5KBGbyw=
             Cert::where('subjectCommonName', $subjectCommonName)->update(['p12' => $p12string]);
 
             $headers = array('Content_Type: application/x-download',);
-          
-           return Response::download(storage_path($subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
-      	}  
+
+           return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
+      	}
 
     }
 
@@ -140,7 +140,7 @@ TXoKcfB8UFRI5KBGbyw=
             $subjectCommonName = $subject['subject']['CN'];
 
             // P12 storage path.
-            $p12 = storage_path($subjectCommonName . '.p12');
+            $p12 = storage_path(archives/$subjectCommonName . '.p12');
 
             // Arguments to pass to the P12 archive.
             $p12args = array (
@@ -158,9 +158,11 @@ TXoKcfB8UFRI5KBGbyw=
             Cert::where('subjectCommonName', $subjectCommonName)->update(['p12' => $p12string]);
 
             $headers = array('Content_Type: application/x-download',);
-          
-           return Response::download(storage_path($subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers)->deleteFileAfterSend(true);
-      	}  
+
+           //return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers)->deleteFileAfterSend(true);
+           return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
+
+      	}
    }
 
    public function keystore()
@@ -169,9 +171,9 @@ TXoKcfB8UFRI5KBGbyw=
    }
 
    public function createKeystore(Request $request)
-   { 
+   {
 
-   	if ($request::hasFile('p12')) 
+   	if ($request::hasFile('p12'))
    	{
    		$storagePath = storage_path();
 
@@ -207,7 +209,7 @@ TXoKcfB8UFRI5KBGbyw=
           //Cert::where('dstalias', $dstalias)->update(['keystore' => $dstalias]);
 
           $headers = array('Content_Type: application/x-download',);
-          
+
         return Response::download(storage_path($dstalias . '.jks'), $dstalias . '.jks', $headers)->deleteFileAfterSend(true);
 
    }
@@ -246,7 +248,7 @@ TXoKcfB8UFRI5KBGbyw=
 
    public function der2pem()
    {
-       return view ('converter.der2pem'); 
+       return view ('converter.der2pem');
    }
 
    public function pemCert()
