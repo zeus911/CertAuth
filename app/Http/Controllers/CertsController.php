@@ -26,7 +26,7 @@ class CertsController extends Controller
     public function created()
     {
         if(isset($_POST['subjectCommonName']) &&
-            isset($_POST['organizationName']) &&  
+            isset($_POST['organizationName']) &&
             isset($_POST['extensionsExtendedKeyUsage']) &&
             isset($_POST['signatureTypeSN']) &&
             isset($_POST['keyLength']) &&
@@ -78,22 +78,22 @@ class CertsController extends Controller
                 "organizationalUnitName" => 'LIQUABit PoC',
                 "commonName" => $subjectCommonName,
                 "emailAddress" => $email
-                );  
+                );
         } else {
             $dn = array(
                 "countryName" => 'ES',
                 "stateOrProvinceName" => 'Madrid',
                 "localityName" => 'Madrid',
                 "organizationName" => $organizationName,
-                "organizationalUnitName" => 'LIQUABit PoC', 
+                "organizationalUnitName" => 'LIQUABit PoC',
                 "commonName" => $subjectCommonName,
                 //"emailAddress" => $defaultEmail
                 );
-        } 
+        }
 
         // Clean DNS entries.
-        shell_exec("sudo /opt/subjectAltNameRemoval.sh 2>&1"); 
-        
+        shell_exec("sudo /opt/subjectAltNameRemoval.sh 2>&1");
+
 		// Open config file.
 		$configFile = file_get_contents($config);
 
@@ -158,7 +158,7 @@ class CertsController extends Controller
                 'publicKey' => $publicKey,
                 'privateKey' => $privateKey,
                 'email' => $email,
-                'comments' => $comments   
+                'comments' => $comments
                 ));
 
         } else {
@@ -166,14 +166,14 @@ class CertsController extends Controller
                 'status' => 'No information has been supplied. Fill in all the fields in the form'
                 ));
         }
-        
+
     }
 
     public function getCert()
    {
        if  (isset($_POST['certificateServerRequest']) &&
-            isset($_POST['publicKey']) && 
-            isset($_POST['privateKey']) && 
+            isset($_POST['publicKey']) &&
+            isset($_POST['privateKey']) &&
             isset($_POST['email']) &&
             isset($_POST['comments']) &&
 
@@ -266,21 +266,21 @@ class CertsController extends Controller
                'signatureTypeLN' => $signatureTypeLN,
                'signatureTypeNID' => $signatureTypeNID,
                'purposes' => $purposes,
-               'extensionsBasicConstraints' => $extensionsBasicConstraints, 
+               'extensionsBasicConstraints' => $extensionsBasicConstraints,
                //'extensionsNsCertType' => $extensionsNsCertType,
                'extensionsKeyUsage' => $extensionsKeyUsage,
                'extensionsExtendedKeyUsage' => $extensionsExtendedKeyUsage,
                'extensionsSubjectKeyIdentifier' => $extensionsSubjectKeyIdentifier,
                'extensionsAuthorityKeyIdentifier' => $extensionsAuthorityKeyIdentifier,
                'extensionsSubjectAltName' => $extensionsSubjectAltName,
-               'extensionsCrlDistributionPoints' => $extensionsCrlDistributionPoints, 
+               'extensionsCrlDistributionPoints' => $extensionsCrlDistributionPoints,
                'certificateServerRequest' => $certificateServerRequest,
-               'publicKey' => $publicKey, 
-               'privateKey' => $privateKey, 
-               'p12' => $p12, 
-               'status' => $status, 
-               'expiryDate' => $expiryDate, 
-               //'email' => $email, 
+               'publicKey' => $publicKey,
+               'privateKey' => $privateKey,
+               'p12' => $p12,
+               'status' => $status,
+               'expiryDate' => $expiryDate,
+               //'email' => $email,
                'comments' => $comments
                ]);
 
@@ -321,9 +321,9 @@ class CertsController extends Controller
             $publicKey = $_POST['publicKey'];
             $privateKey = $_POST['privateKey'];
             $password = $_POST['password'];
-            
+
             $storage_path = storage_path();
-            $p12 = storage_path($subjectCommonName . '.p12');
+            $p12 = storage_path(archives/$subjectCommonName . '.p12');
 
             // CACert storage path.
             //$cacert = file(storage_path('cert.ca.cer'));
@@ -376,9 +376,11 @@ class CertsController extends Controller
             Cert::where('subjectCommonName', $subjectCommonName)->update(['p12' => $p12string]);
 
             $headers = array('Content-Type: application/x-download');
-          
-           return Response::download(storage_path($subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers)->deleteFileAfterSend(true);
-      }  
+
+           // return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers)->deleteFileAfterSend(true);
+           return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
+
+      }
    }
 
 }
