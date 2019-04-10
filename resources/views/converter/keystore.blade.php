@@ -18,7 +18,7 @@
         <br />
         </br>
         <!-- {{ Form::label('Source Archive Type: ', 'Source Archive Type: ') }} -->
-        {{ Form::select('srcstoretype', ['PKCS12' => 'PKCS12', 'none' => 'More coming...'], null, ['placeholder' => '<i class="fa fa-cogs" aria-hidden="true"></i> Source Archive Type', 'class' => 'form-control' ]) }}
+        {{ Form::select('srcstoretype', ['PKCS12' => 'PKCS12', 'none' => 'More coming...'], null, ['placeholder' => 'Source Archive Type', 'class' => 'form-control' ]) }}
         @if($errors->has('srcstoretype'))
             {{ $errors->first('srcstoretype') }}
         @endif
