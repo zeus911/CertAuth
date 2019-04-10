@@ -6,7 +6,7 @@
 
     <h2>Convert Certificates to P12/PFX</h2>
 
-    <h5 class="text-primary">Generates a PFX(P12) archive from a certificate and his private key.</h5>
+    <h5 class="text-primary"><strong>Generates a PFX(P12) archive from a certificate and his private key.</strong></h5>
     </br>
 <!--
     {{ Form::open(['url' => 'converter/getP12', 'method' => 'post']) }}
@@ -46,7 +46,7 @@ MIICxDCCAawCAQAwYzELMAkGA1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0G
     @endif
     <br />
     {{ Form::token() }}
-    {{ Form::submit('Convert & Get PFX(P12)', ['class' => 'btn btn-success btn-md']) }}
+    {{ Form::submit('Convert & Get PFX(P12)', ['class' => 'btn btn-success']) }}
     {{ Form::close() }}
 	<br />
 </div>

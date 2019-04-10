@@ -6,15 +6,15 @@
 
     <h2>Convert DER to PEM</h2>
 
-    <p class="text-info">Converts certificate in DER (*.crt, *.cer, *.der) format to PEM format (*.pem).</p>
+    <h5 class="text-primary"><strong>Converts certificate in DER (*.crt, *.cer, *.der) format to PEM format (*.pem).</strong></p>
     </br>
 <!--
     {{ Form::open(['url' => 'converter/getP12', 'method' => 'post']) }}
-    
+
     {{ Form::label('Select a certifiate file: ', 'Select a Certificate File: ', ['class' => '']) }}
     {{ Form::File('cert', ['placeholder' => 'Select a Certificate...', 'class'=>'' ]) }}
         @if($errors->has('cert'))
-        {{ $errors->first('cert') }} 
+        {{ $errors->first('cert') }}
     @endif
     </br> -->
     <p><strong>Paste your DER certificate content.</strong></p>
@@ -29,7 +29,7 @@ A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
     </br>
     <br />
     {{ Form::token() }}
-    {{ Form::submit('Convert to DER Certificate', ['class' => 'btn btn-success btn-md']) }}
+    {{ Form::submit('Convert to DER Certificate', ['class' => 'btn btn-success']) }}
     {{ Form::close() }}
 	<br />
 </div>

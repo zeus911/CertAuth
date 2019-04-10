@@ -11,11 +11,11 @@
     {{ Form::label('password: ', 'Passphrase: ', ['class' => '']) }}
     {{ Form::password('password', ['placeholder' => 'Passphrase', 'class' => 'form-control' ]) }}
         @if($errors->has('password'))
-        {{ $errors->first('password') }} 
-    @endif     
+        {{ $errors->first('password') }}
+    @endif
     <br />
     {{ Form::token() }}
-    {{ Form::button('<i class="fa fa-cogs" aria-hidden="true"></i> Create & Get PFX(P12)', ['class' => 'btn btn-primary btn-md', 'type' => 'submit']) }}
+    {{ Form::button('<i class="fa fa-cogs" aria-hidden="true"></i> Create & Get PFX(P12)', ['class' => 'btn btn-primary', 'type' => 'submit']) }}
     {{ Form::close() }}
 
 
