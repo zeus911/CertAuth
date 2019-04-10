@@ -35,7 +35,7 @@
             {{ $errors->first('dstalias') }}
         @endif
         </br>
-        {{ Form::submit('<i class="fa fa-cogs" aria-hidden="true"></i> Create Keystore', ['class' => 'btn btn-success']) }}
+        {{ Form::submit('Create Keystore', ['class' => 'btn btn-success']) }}
         {{ Form::close() }}
 
     </div>
