@@ -37,7 +37,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel navbar fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
                     {{--  <strong>{{ config('app.name', '') }} <span class="badge badge-light">PoC</span></strong>  --}}
@@ -51,8 +51,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="certificates" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-certificate"></i> Certificates</strong></a>
-                            <ul class="dropdown-menu" aria-labelledby="certificates">
+                            <a class="nav-link dropdown-toggle" id="certificate" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-certificate"></i> Certificates</strong></a>
+                            <ul class="dropdown-menu" aria-labelledby="certificate">
                                 <li class="dropdown-item"><a href="{{ url('dashboard') }}"><strong class="text-danger"><i class="fas fa-chart-bar"></i> DASHBOARD</strong></a></li>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header"><strong>CERTIFICATES</strong></h6>
@@ -68,7 +68,7 @@
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="jarsigner" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-archive"></i> JAR Signer</strong></a>
+                            <a class="nav-link dropdown-toggle" id="jarsigner" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-archive"></i> JAR Signer</strong></a>
                             <ul class="dropdown-menu" aria-labelledby="jarsigner">
                                 <li class="dropdown-item"><a href="{{ url('signer/jar') }}"><i class="fas fa-file-signature"></i><strong> Sign a Java Archive </strong></a></li>
                             </ul>
@@ -76,27 +76,26 @@
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="msauthenticode" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fab fa-windows"></i> Microsoft Authenticode</strong></a>
-                            <ul class="dropdown-menu" aria-labelledby="msauthenticode">
-                                <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-file-signature"></i><strong> Sign a Microsoft Archive </strong></a></li>
-                            </ul>
+                            <a class="nav-link dropdown-toggle" id="authenticode" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fab fa-windows"></i> Microsoft Authenticode</strong></a>
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="authenticode">
+                                    <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-file-signature"></i><strong> Sign a Microsoft Archive </strong></a>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="ssltools" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-tools"></i> SSL Tools</strong></a>
-                            <ul class="dropdown-menu" aria-labelledby="ssltools">
-                                    <h6 class="dropdown-header"><strong>CERTIFICATE CONVERTER</strong></h6>
-                                <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert to PFX/P12 </strong></a></li>
-                                <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert PEM to DER </strong></a></li>
-                                <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert DER to PEM </strong></a></li>
+                            <a class="nav-link dropdown-toggle" id="converter" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre><strong><i class="fas fa-tools"></i> SSL Tools</strong></a>
+                            <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="converter">
+                                <h6 class="dropdown-header"><strong>CERTIFICATE CONVERTER</strong></h6>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert to PFX/P12 </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert PEM to DER </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert DER to PEM </strong></a></li>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header"><strong>JAVA KEYSTORE</strong></h6>
-                                <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-plus"></i><strong> Create Keystore </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Create Keystore </strong></a></li>
                             </ul>
                         </li>
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -111,11 +110,11 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="login" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong><i class="fas fa-user-astronaut"></i> {{ Auth::user()->name }} <span class="caret"></span></strong>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="login">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
