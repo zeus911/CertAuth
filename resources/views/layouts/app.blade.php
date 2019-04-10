@@ -106,12 +106,12 @@
                             <a class="nav-link dropdown-toggle" id="converter" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre><strong><i class="fas fa-tools"></i> SSL Tools</strong></a>
                             <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="converter">
                                 <h6 class="dropdown-header"><strong>CERTIFICATE CONVERTER</strong></h6>
-                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert to PFX/P12 </strong></a></li>
-                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert PEM to DER </strong></a></li>
-                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Convert DER to PEM </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('converter/p12') }}"><i class="fas fa-exchange-alt"></i><strong> Convert to PFX/P12 </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('converter/pem2der') }}"><i class="fas fa-exchange-alt"></i><strong> Convert PEM to DER </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('converter/der2pem') }}"><i class="fas fa-exchange-alt"></i><strong> Convert DER to PEM </strong></a></li>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header"><strong>JAVA KEYSTORE</strong></h6>
-                                    <li class="dropdown-item"><a href="{{ url('signer/authenticode') }}"><i class="fas fa-exchange-alt"></i><strong> Create Keystore </strong></a></li>
+                                    <li class="dropdown-item"><a href="{{ url('converter/keystore') }}"><i class="fas fa-exchange-alt"></i><strong> Create Keystore </strong></a></li>
                             </ul>
                         </li>
                     </ul>
