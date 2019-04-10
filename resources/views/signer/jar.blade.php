@@ -12,12 +12,6 @@
             {{ Form::file('jar', null, ['class' => 'form-control']) }}
         </div>
 
-        <!-- Drop Zone -->
-        <h4>Or drag and drop files below</h4>
-        <div class="upload-drop-zone" id="drop-zone">
-          Just drag and drop files here
-        </div>
-
         <div class="form-group">
             {{ Form::label('Password') }}
             {{ Form::password('password', ['placeholder' => 'Keystore Password', 'class' => 'form-control' ]) }}

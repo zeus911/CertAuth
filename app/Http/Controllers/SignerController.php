@@ -88,8 +88,8 @@ class SignerController extends Controller
         // Variables to exec jarsigner.
 		$keystore = "/opt/keystore/codesign.p12";
 		$keystorealias = "liquabitcs";
-		//$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec (Java).
-    	$tsaurl = "http://timestamp.verisign.com/scripts/timstamp.dll"; // Timestamp Server used by Symantec (Authenticode).
+        //$tsaurl = "http://timestamp.verisign.com/scripts/timstamp.dll"; // Timestamp Server used by Symantec (Authenticode).
+        $tsaurl = "http://timestamp.digicert.com";
 
         $osslsigncode = shell_exec("osslsigncode sign -pkcs12 $keystore -pass $password -h sha2 -t $tsaurl -in $archive_uploaded -out $storagePath/archives/$archive_name.signed 2>&1");
 
