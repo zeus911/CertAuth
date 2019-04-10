@@ -37,11 +37,11 @@ class SignerController extends Controller
       }
 
         // Variables for jarsigner.
-		$keystore = "/opt/keystore/symantec_cs.jks";
-		$keystorealias = "tragsa";
+		$keystore = "/opt/keystore/codesign.jks";
+		$keystorealias = "liquabitcs";
 		$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec.
 
-        $jarsigner = shell_exec("jarsigner -tsa $tsaurl -keystore $keystore -storepass $password -signedjar $storagePath/$jarName.signed $jarUploaded $keystorealias 2>&1");
+        $jarsigner = shell_exec("jarsigner -tsa $tsaurl -keystore $keystore -storepass $password -signedjar $storagePath/archives/$jarName.signed $jarUploaded $keystorealias 2>&1");
 
         File::delete($jarUploaded);
 
@@ -86,12 +86,12 @@ class SignerController extends Controller
       }
 
         // Variables to exec jarsigner.
-		$keystore = "/opt/keystore/symantec_cs.p12";
-		$keystorealias = "tragsa";
+		$keystore = "/opt/keystore/codesign.p12";
+		$keystorealias = "liquabitcs";
 		//$tsaurl = "http://sha256timestamp.ws.symantec.com/sha256/timestamp"; // Timestamp Server used by Symantec (Java).
     	$tsaurl = "http://timestamp.verisign.com/scripts/timstamp.dll"; // Timestamp Server used by Symantec (Authenticode).
 
-        $osslsigncode = shell_exec("osslsigncode sign -pkcs12 $keystore -pass $password -h sha2 -t $tsaurl -in $archive_uploaded -out $storagePath/$archive_name.signed 2>&1");
+        $osslsigncode = shell_exec("osslsigncode sign -pkcs12 $keystore -pass $password -h sha2 -t $tsaurl -in $archive_uploaded -out $storagePath/archives/$archive_name.signed 2>&1");
 
         File::delete($archive_uploaded);
 
