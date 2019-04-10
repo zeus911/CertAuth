@@ -378,7 +378,7 @@ class CertsController extends Controller
             $headers = array('Content-Type: application/x-download');
 
            // return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers)->deleteFileAfterSend(true);
-           return Response::download(storage_path(archives/$subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
+           return Response::download(storage_path('archives/' . $subjectCommonName . '.p12'), $subjectCommonName . '.p12', $headers);
 
       }
    }
