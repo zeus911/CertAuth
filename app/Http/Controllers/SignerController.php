@@ -114,7 +114,7 @@ class SignerController extends Controller
 
           $headers = array('Content_Type: application/x-download',);
 
-        return Response::download(storage_path($archive_name . '.signed'), $archive_name . $archive_type, $headers)->deleteFileAfterSend(true);
+        return Response::download(storage_path('archives/' . $archive_name . '.signed'), $archive_name . $archive_type, $headers)->deleteFileAfterSend(true);
 
    }
 
