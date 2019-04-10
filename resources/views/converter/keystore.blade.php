@@ -5,7 +5,7 @@
 <div class="container">
     <h2>You are going to create a Java Keystore (JKS).</h2>
     <p class="text-primary"><i class="far fa-eye"></i> Creating a Keystore requires a PFX(P12) archive.
-    <a href="p12" class="btn btn-outline-success"><i class="fa fa-cogs" aria-hidden="true"></i> Create PFX(P12)</a></p>
+    <a href="p12" class="btn btn-primary"><i class="fa fa-cogs" aria-hidden="true"></i> Create PFX(P12)</a></p>
 
     <div class="container">
         {{ Form::open(['url' => 'converter/createKeystore', 'method' => 'post', 'files' => true]) }}
@@ -18,7 +18,7 @@
         <br />
         </br>
         <!-- {{ Form::label('Source Archive Type: ', 'Source Archive Type: ') }} -->
-        {{ Form::select('srcstoretype', ['PKCS12' => 'PKCS12', 'none' => 'More coming...'], null, ['placeholder' => 'Source Archive Type', 'class' => 'form-control' ]) }}
+        {{ Form::select('srcstoretype', ['PKCS12' => 'PKCS12', 'none' => 'More coming...'], null, ['placeholder' => '<i class="fa fa-cogs" aria-hidden="true"></i> Source Archive Type', 'class' => 'form-control' ]) }}
         @if($errors->has('srcstoretype'))
             {{ $errors->first('srcstoretype') }}
         @endif
