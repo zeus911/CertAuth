@@ -15,6 +15,7 @@
         @if($errors->has('p12'))
             {{ $errors->first('p12') }}
         @endif
+        <br />
         </br>
         <!-- {{ Form::label('Source Archive Type: ', 'Source Archive Type: ') }} -->
         {{ Form::select('srcstoretype', ['PKCS12' => 'PKCS12', 'none' => 'More coming...'], null, ['placeholder' => 'Source Archive Type', 'class' => 'form-control' ]) }}
