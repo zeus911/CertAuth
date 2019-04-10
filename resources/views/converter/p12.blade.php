@@ -6,15 +6,15 @@
 
     <h2>Convert Certificates to P12/PFX</h2>
 
-    <p class="text-info">Generates a PFX(P12) archive from a certificate and his private key.</p>
+    <h5 class="text-primary">Generates a PFX(P12) archive from a certificate and his private key.</h5>
     </br>
 <!--
     {{ Form::open(['url' => 'converter/getP12', 'method' => 'post']) }}
-    
+
     {{ Form::label('Select a certifiate file: ', 'Select a Certificate File: ', ['class' => '']) }}
     {{ Form::File('cert', ['placeholder' => 'Select a Certificate...', 'class'=>'' ]) }}
         @if($errors->has('cert'))
-        {{ $errors->first('cert') }} 
+        {{ $errors->first('cert') }}
     @endif
     </br> -->
     <p><strong>Copy &amp Paste your certificate content.</strong></p>
@@ -42,8 +42,8 @@ MIICxDCCAawCAQAwYzELMAkGA1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0G
     {{ Form::label('password: ', 'Passphrase: ', ['class' => '']) }}
     {{ Form::password('password', ['placeholder' => 'Passphrase', 'class' => 'form-control' ]) }}
         @if($errors->has('password'))
-        {{ $errors->first('password') }} 
-    @endif     
+        {{ $errors->first('password') }}
+    @endif
     <br />
     {{ Form::token() }}
     {{ Form::submit('Convert & Get PFX(P12)', ['class' => 'btn btn-success btn-md']) }}
