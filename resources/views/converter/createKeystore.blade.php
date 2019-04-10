@@ -5,7 +5,7 @@
 <div class="container">
     <H2>You have created a Java Keystore ({{ $dstalias }}).</H2>
     <div class="alert alert-light" role="alert">
-        {{ $result }}
+        <strong>{{ $result }}</strong>
     </div>
     <div class="container">
         {{ Form::open(['url' => 'converter/getKeystore', 'method' => 'post']) }}
