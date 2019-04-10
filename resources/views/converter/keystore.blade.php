@@ -5,7 +5,7 @@
 <div class="container">
     <h2>You are going to create a Java Keystore (JKS).</h2>
     <p class="text-primary"><i class="far fa-eye"></i> Creating a Keystore requires a PFX(P12) archive.
-    <a href="p12" class="btn btn-link"><i class="fa fa-cogs" aria-hidden="true"></i> Create PFX(P12)</a></p>
+    <a href="p12" class="btn btn-link"><strong><i class="fa fa-cogs" aria-hidden="true"></i> Create PFX(P12)</strong></a></p>
 
     <div class="container">
         {{ Form::open(['url' => 'converter/createKeystore', 'method' => 'post', 'files' => true]) }}
