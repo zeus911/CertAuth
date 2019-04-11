@@ -323,7 +323,7 @@ class CertsController extends Controller
             $password = $_POST['password'];
 
             $storage_path = storage_path();
-            $p12 = storage_path(archives/$subjectCommonName . '.p12');
+            $p12 = storage_path('archives/' . $subjectCommonName . '.p12');
 
             // CACert storage path.
             //$cacert = file(storage_path('cert.ca.cer'));
