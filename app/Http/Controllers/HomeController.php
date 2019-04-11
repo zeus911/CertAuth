@@ -23,9 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('certs/mgmt');
     }
-    
+
     public function changelog()
     {
         return view('changelog');
@@ -35,7 +35,7 @@ class HomeController extends Controller
     {
         return view('todo');
     }
-    
+
     public function kb()
     {
         return view('kb');

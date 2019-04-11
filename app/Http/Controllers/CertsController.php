@@ -112,7 +112,7 @@ class CertsController extends Controller
                 'subjectAltName' => $extensionsSubjectAltName,
                 'digest_alg' => $signatureTypeSN );
 
-                // Generate CSR and his corresponding Private Key.
+        // Generate CSR and his corresponding Private Key.
         $keygen = openssl_pkey_new();
         $csrgen = openssl_csr_new($dn, $keygen, $configArgs);
 
