@@ -57,7 +57,7 @@
     <!-- footer -->
 
     <div class="container">
-        <div class="text-primary"><center><strong><a href="https://prototypes.liquabit.com" <i class="fab fa-product-hunt"></i>rototypes, 2016 - {{ date('F Y') }}.</a></strong></center></div>
+        <div class="text-primary"><center><strong><a href="https://prototypes.liquabit.com" <i class="fab fa-product-hunt" aria-hidden="true"></i>rototypes, 2016 - {{ date('F Y') }}.</a></strong></center></div>
         <div class="text-muted"><center><strong><i class="fa fa-quote-left" aria-hidden="true"></i> Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning...<i class="fa fa-quote-right" aria-hidden="true"></i></strong></center></div>
     </div>
 </div>
