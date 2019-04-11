@@ -12,7 +12,8 @@
 > This VM is build with Oracle Virtual Box 6.0.4
 
 ## Manual install instructions:
-1. Clone the Repo from Github: git clone https://github.com/lopeaa/CertAuth.
+1. Clone the Repo from Github:
+> git clone https://github.com/lopeaa/CertAuth.
 2. Configure you Webserver for this application.
 3. Run composer update to create the vendor folder.
 4. Configure the .env file to connect to your database.
