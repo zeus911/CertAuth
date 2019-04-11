@@ -13,7 +13,10 @@
 
 ## How to use your own CA Certificate:
 Replace the following files with your own CA Certificates and Private Key (Keep the names unchanged):
-> /opt/ca/root/certs/root.cert.pem. and /opt/ca/root/private/root.key.pem.
+#### Certificate in PEM format:
+> /opt/ca/root/certs/root.cert.pem
+#### Private Key in PEM format:
+> /opt/ca/root/private/root.key.pem
 
 ## Manual install instructions:
 1. Clone the Repo from Github:
