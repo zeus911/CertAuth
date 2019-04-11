@@ -79,7 +79,7 @@
                                 @endif  --}}
                             </div>
                         </div>
-                        <div><i class="fas fa-code-branch"></i> 0.2</div>
+                        <div><i class="fas fa-code-branch"></i> 1.0</div>
                     </form>
                 </div>
             </div>
