@@ -31,5 +31,5 @@
 
 ### Download <a href="https://liquabit.com/get/step-by-step-installation.pdf">Step by Step installation</a>
 
-# <a href="https://ca.liquabit.com/">Demo site</a>
+# <a href="https://mega.nz/#!GMZSSCDD">Demo site</a>
 
