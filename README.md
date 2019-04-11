@@ -13,10 +13,21 @@
 
 ## Manual install instructions:
 1. Clone the Repo from Github:
-> git clone https://github.com/lopeaa/CertAuth.
+> git clone https://github.com/lopeaa/CertAuth
 2. Configure you Webserver for this application.
-3. Run composer update to create the vendor folder.
+3. Run composer update to create the vendor folder from within the project folder:
+> composer update
 4. Configure the .env file to connect to your database.
+
+## Dependencies:
+1. Laravel Framework 5.7, MySql Server, PHP7.3
+2. osslsigncode
+3. default-jdk
+4. gnutls-bin
+5. PHP7.3-Intl(idn-to-ascii)
+6. PHP7.3-zip
+7. Python 3.6.x
+8. MSMTP
 
 ### Download <a href="https://liquabit.com/get/step-by-step-installation.pdf">Step by Step installation</a>
 
