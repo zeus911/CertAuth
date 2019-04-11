@@ -11,6 +11,11 @@
 ### Download <a href="https://mega.nz/#!GMZSSCDD">Virtual Machine (.OVA)</a>
 > This VM is build with Oracle Virtual Box 6.0.4
 
+## How to use your own CA Certificate:
+Replace the following files with your own CA Certificates and Private Key (Keep the names unchanged):
+> /opt/ca/root/certs/root.cert.pem
+> /opt/ca/root/private/root.key.pem
+
 ## Manual install instructions:
 1. Clone the Repo from Github:
 > git clone https://github.com/lopeaa/CertAuth
