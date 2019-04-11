@@ -16,7 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" required autofocus>
-<p>Introduce admin@example.com</p>
+                                <p class="text-danger">Admin User: admin@example.com</p>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -30,7 +30,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" name="password" required>
-
+                                <p class="text-danger">Admin Passowrd: 123456</p>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -44,7 +44,7 @@
 
                                 <div class="col-md-6">
                                     <input id="otc" type="password" class="form-control{{ $errors->has('otc') ? ' is-invalid' : '' }}" placeholder="One-Time-Code" name="otc" required>
-
+                                    <p class="text-info">Admin OTC: 1234</p>
                                     @if ($errors->has('otc'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('otc') }}</strong>
