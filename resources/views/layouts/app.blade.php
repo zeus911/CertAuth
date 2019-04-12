@@ -96,8 +96,8 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="authenticode" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fab fa-windows"></i> Microsoft Authenticode</strong></a>
-                            <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="authenticode">
-                                    <a class="dropdown-item text-primary" href="{{ url('signer/authenticode') }}"><i class="fas fa-file-signature"></i><strong> Sign a Microsoft Archive </strong></a>
+                            <ul class="dropdown-menu" aria-labelledby="authenticode">
+                                <a class="dropdown-item" href="{{ url('signer/authenticode') }}"><i class="fas fa-file-signature"></i><strong> Sign a Microsoft Archive </strong></a>
                             </ul>
                         </li>
                     </ul>
