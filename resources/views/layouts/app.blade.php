@@ -89,7 +89,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="jarsigner" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-archive"></i> JAR Signer</strong></a>
                             <ul class="dropdown-menu" aria-labelledby="jarsigner">
-                                <li class="dropdown-item"><a href="{{ url('signer/jar') }}"><i class="fas fa-file-signature"></i><strong> Sign a Java Archive </strong></a></li>
+                                <a class="dropdown-item"><a href="{{ url('signer/jar') }}"><i class="fas fa-file-signature"></i><strong> Sign a Java Archive </strong></a>
                             </ul>
                         </li>
                     </ul>
