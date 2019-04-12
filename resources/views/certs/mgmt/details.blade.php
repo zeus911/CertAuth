@@ -87,7 +87,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
             </tr>
             <tr>
                   <th><i class="fas fa-signature"></i> Issued by</th>
-                    <td><strong class="text-primary"> {{ $issuerCN }} </strong></td> 
+                    <td><strong class="text-primary"> {{ $issuerCN }} </strong></td>
             </tr>
             <tr>
                   <th><i class="fas fa-calendar-alt"></i> Valid from</th>
@@ -115,7 +115,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   <th><i class="fas fa-sort-numeric-up"></i> Serial</th>
                    <td><strong class="text-primary">{{ $serialNumber }} ( {{ $serialNumberHex }} )</strong></td>
             </tr>
-            <tr>     
+            <tr>
                   <th><i class="fas fa-key"></i> Key Usage</th>
                    <td><strong class="text-primary">{{ $extensionsKeyUsage }}</strong></td>
             </tr>
@@ -145,9 +145,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to Update CSR in DB -->
                                 {{ Form::open(['url' => 'certs/mgmt/update', 'method' => 'post']) }}
                                 {{csrf_field()}}
-                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                                 @if($errors->has('subjectCommonName'))
-                                    {{ $errors->first('subjectCommonName') }} 
+                                    {{ $errors->first('subjectCommonName') }}
                                 @endif
                               <!-- <br /> -->
                                 {{ Form::token() }}
@@ -157,9 +157,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to download CSR to a file. -->
                                 {{ Form::open(['url' => 'certs/mgmt/getCSR', 'method' => 'post']) }}
                                 {{csrf_field()}}
-                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                                 @if($errors->has('subjectCommonName'))
-                                    {{ $errors->first('subjectCommonName') }} 
+                                    {{ $errors->first('subjectCommonName') }}
                                 @endif
                                 {{ Form::token() }}
                                 {{ Form::button('<i class="fa fa-download" aria-hidden="true"></i> Download', ['class' => 'btn btn-outline-primary', 'type' => 'submit']) }}
@@ -173,6 +173,10 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
               </tr>
               <tr>
                   <th><i class="fas fa-certificate"></i> Certificate (Public Key)</th>
+
+                  <div class="btn-toolbar mb-3" role="toolbar">
+                        <div class="btn-group mr-2" role="group">
+
                   <td><!-- View Certificate -->
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CERTModal"><i class="far fa-eye"></i> View</button>
                         <!-- View Modal -->
@@ -193,9 +197,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to Update PublicKey in DB -->
                                 {{ Form::open(['url' => 'certs/mgmt/update', 'method' => 'post']) }}
                                 {{csrf_field()}}
-                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                                 @if($errors->has('subjectCommonName'))
-                                    {{ $errors->first('subjectCommonName') }} 
+                                    {{ $errors->first('subjectCommonName') }}
                                 @endif
                               <!-- <br /> -->
                                 {{ Form::token() }}
@@ -205,9 +209,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to download PublicKey to a file. -->
                                 {{ Form::open(['url' => 'certs/mgmt/getPublicKey', 'method' => 'post']) }}
                                 {{csrf_field()}}
-                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                                 @if($errors->has('subjectCommonName'))
-                                    {{ $errors->first('subjectCommonName') }} 
+                                    {{ $errors->first('subjectCommonName') }}
                                 @endif
                                 {{ Form::token() }}
                                 {{ Form::button('<i class="fa fa-download" aria-hidden="true"></i> Download', ['class' => 'btn btn-outline-primary', 'type' => 'submit']) }}
@@ -218,8 +222,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   </div>
                 </div>
               </td>
-              </tr> 
-              <tr>    
+                        </div>
+              </tr>
+              <tr>
                   <th><i class="fas fa-key"></i> Private Key (.key)</th>
                   <td><!-- View Private Key -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#KEYModal"><i class="far fa-eye"></i> View</button>
@@ -241,9 +246,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to Update PrivateKey in DB -->
                                 {{ Form::open(['url' => 'certs/mgmt/update', 'method' => 'post']) }}
                                 {{csrf_field()}}
-                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                                 @if($errors->has('subjectCommonName'))
-                                    {{ $errors->first('subjectCommonName') }} 
+                                    {{ $errors->first('subjectCommonName') }}
                                 @endif
                               <!-- <br /> -->
                                 {{ Form::token() }}
@@ -253,9 +258,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to download PrivateKey to a file. -->
                                 {{ Form::open(['url' => 'certs/mgmt/getPrivateKey', 'method' => 'post']) }}
                                 {{csrf_field()}}
-                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                                <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                                 @if($errors->has('subjectCommonName'))
-                                    {{ $errors->first('subjectCommonName') }} 
+                                    {{ $errors->first('subjectCommonName') }}
                                 @endif
                                 {{ Form::token() }}
                                 {{ Form::button('<i class="fa fa-download" aria-hidden="true"></i> Download', ['class' => 'btn btn-outline-primary', 'type' => 'submit']) }}
@@ -266,8 +271,8 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   </div>
                 </div>
               </td>
-              </tr>    
-              <tr>  
+              </tr>
+              <tr>
                 <th><i class="fas fa-archive"></i> Personal Information Exchange (P12/PFX)</th>
                 <td><!-- View Personal Information Exchange -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#PFXModal"><i class="far fa-eye"></i> View</button>
@@ -292,7 +297,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <input class="sr-only" type="text" name="publicKey" value="{{ $publicKey }}">
                               <input class="sr-only" type="text" name="privateKey" value="{{ $privateKey }}">
                               @if($errors->has('subjectCommonName'))
-                                  {{ $errors->first('subjectCommonName') }} 
+                                  {{ $errors->first('subjectCommonName') }}
                               @endif
                               {{ Form::token() }}
                               {{ Form::button('<i class="fa fa-cogs" aria-hidden="true"></i> Create New', ['class' => 'btn btn-outline-primary', 'type' => 'submit']) }}
@@ -300,9 +305,9 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                               <!-- Button to download PFX to a file. -->
                               {{ Form::open(['url' => 'certs/mgmt/getP12', 'method' => 'post']) }}
                               {{csrf_field()}}
-                              <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}"> 
+                              <input class="sr-only" type="text" name="subjectCommonName" value="{{ $subjectCommonName }}">
                               @if($errors->has('subjectCommonName'))
-                                  {{ $errors->first('subjectCommonName') }} 
+                                  {{ $errors->first('subjectCommonName') }}
                               @endif
                               {{ Form::token() }}
                               {{ Form::button('<i class="fa fa-download" aria-hidden="true"></i> Download', ['class' => 'btn btn-outline-primary', 'type' => 'submit']) }}
@@ -317,7 +322,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
             <tbody>
         </table>
         <div class="btn-toolbar mb-3" role="toolbar">
-      <div class="btn-group mr-2" role="group">
+            <div class="btn-group mr-2" role="group">
               <td><!-- Key Matcher -->
                   {{ Form::open(['url' => 'certs/mgmt/keymatcher', 'method' => 'post']) }}
                   {{csrf_field()}}
@@ -328,7 +333,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   <input type="hidden" name="privateKey" value="{{ $privateKey }}">
 
                   @if($errors->has('subjectCommonName'))
-                      {{ $errors->first('subjectCommonName') }} 
+                      {{ $errors->first('subjectCommonName') }}
                   @endif
                   {{ Form::token() }}
                   {{ Form::button('<i class="fa fa-handshake-o" aria-hidden="true"></i> Key Matcher', ['class' => 'btn btn-primary', 'type' => 'submit']) }}
@@ -342,7 +347,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   <!--{{ Form::label('Common Name: ', 'Common Name: ', ['class' => '']) }}-->
                   <input type="hidden" name="subjectCommonName" value="{{ $subjectCommonName }}">
                   @if($errors->has('subjectCommonName'))
-                      {{ $errors->first('subjectCommonName') }} 
+                      {{ $errors->first('subjectCommonName') }}
                   @endif
                   {{ Form::token() }}
                   {{ Form::button('<i class="fa fa-refresh" aria-hidden="true"></i> Renew Certificate', ['class' => 'btn btn-success', 'type' => 'submit']) }}
@@ -356,7 +361,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   <!--{{ Form::label('Common Name: ', 'Common Name: ', ['class' => '']) }}-->
                   <input type="hidden" name="subjectCommonName" value="{{ $subjectCommonName }}">
                   @if($errors->has('subjectCommonName'))
-                      {{ $errors->first('subjectCommonName') }} 
+                      {{ $errors->first('subjectCommonName') }}
                   @endif
                   {{ Form::token() }}
                   {{ Form::button('<i class="fa fa-ban" aria-hidden="true"></i> Revoke Certificate', ['class' => 'btn btn-danger', 'type' => 'submit']) }}
@@ -370,7 +375,7 @@ timestamps:<strong class="text-primary"> {{ $certs->timestamps }}</strong>
                   <!--{{ Form::label('Common Name: ', 'Common Name: ', ['class' => '']) }}-->
                   <input type="hidden" name="subjectCommonName" value="{{ $subjectCommonName }}">
                   @if($errors->has('subjectCommonName'))
-                      {{ $errors->first('subjectCommonName') }} 
+                      {{ $errors->first('subjectCommonName') }}
                   @endif
                   {{ Form::token() }}
                   {{ Form::button('<i class="fa fa-trash" aria-hidden="true"></i> Delete Certificate', ['class' => 'btn btn-danger', 'type' => 'submit']) }}
