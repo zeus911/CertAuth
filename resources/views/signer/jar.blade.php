@@ -8,7 +8,7 @@
 
     {{ Form::open(['url' => 'signer/signJAR', 'method' => 'POST', 'class' => 'form', 'files' => true]) }}
         <div class="form-group">
-            {{ Form::label('Select JAR Archive') }}
+            {{--  {{ Form::label('Select JAR Archive') }}  --}}
             {{ Form::file('jar', null, ['class' => 'form-control']) }}
       {{--  {{ Form::file('jar[]', null, ["class"=>"required","multiple"=>true]) }}  --}}
         </div>
