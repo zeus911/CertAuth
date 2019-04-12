@@ -144,18 +144,6 @@
                                         @csrf
                                     </form>
                                 </div>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="register">
-                                        <a class="dropdown-item" href="{{ route('register') }}"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('register-form').submit();">
-                                            <strong><i class="fas fa-sign-out-alt"></i> {{ __('New User') }}</strong>
-                                        </a>
-
-                                        <form id="register-form" action="{{ route('register') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-
                             </li>
 
                             @endguest
