@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <H2>You are going to sign a Java Archive (JAR).</H2>
+    <H2>Sign a Java Archive (JAR).</H2>
     <div class="container">
 
     {{ Form::open(['url' => 'signer/signJAR', 'method' => 'POST', 'class' => 'form', 'files' => true]) }}
