@@ -18,6 +18,7 @@
             {{ $errors->first('archive_type') }}
         	@endif
         <div>
+        <br />
         <div class="form-group">
             {{--  {{ Form::label('Password') }}  --}}
             {{ Form::password('password', ['placeholder' => 'Keystore Password', 'class' => 'form-control' ]) }}
