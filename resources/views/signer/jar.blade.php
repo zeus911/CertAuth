@@ -10,7 +10,7 @@
         <div class="form-group">
             {{--  {{ Form::label('Select JAR Archive') }}  --}}
             {{--  {{ Form::file('jar', null, ['class' => 'form-control']) }}  --}}
-            {{ Form::file('jar[]', null, ["class"=>"required","multiple"=>true]) }}
+            {{ Form::file('jar['name']', null, ["class"=>"required","multiple"=>true]) }}
 
         </div>
 
