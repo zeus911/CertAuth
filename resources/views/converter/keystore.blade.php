@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2>You are going to create a Java Keystore (JKS).</h2>
+    <h2>Create a Java Keystore (JKS).</h2>
     <p class="text-primary"><i class="far fa-eye"></i> Creating a Keystore requires a PFX(P12) archive.
     <a href="p12" class="btn btn-link"><strong class="text-success"><i class="fa fa-cogs" aria-hidden="true"></i> Create PFX(P12)</strong></a></p>
 

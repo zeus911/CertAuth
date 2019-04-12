@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <h2>Convert Certificates to P12/PFX</h2>
+    <h2>Create a P12/PFX Archive</h2>
 
     <h5 class="text-primary"><strong>Generates a PFX(P12) archive from a certificate and his private key.</strong></h5>
     </br>
