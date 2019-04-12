@@ -14,7 +14,7 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('Password') }}
+            {{--  {{ Form::label('Password') }}  --}}
             {{ Form::password('password', ['placeholder' => 'Keystore Password', 'class' => 'form-control' ]) }}
         </div>
 
