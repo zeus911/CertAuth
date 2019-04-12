@@ -72,16 +72,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="certificate" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong><i class="fas fa-certificate"></i> Certificates</strong></a>
                             <ul class="dropdown-menu" aria-labelledby="certificate">
-                                <a class="dropdown-item"> href="{{ url('dashboard') }}"><strong class="text-danger"><i class="fas fa-chart-bar"></i> DASHBOARD</strong></a>
+                                <a class="dropdown-item" href="{{ url('dashboard') }}"><strong class="text-danger"><i class="fas fa-chart-bar"></i> DASHBOARD</strong></a>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header"><strong>CERTIFICATES</strong></h6>
-                                <a class="dropdown-item" data-toggle="tooltip" data-placement="right" title="Generates the CSR + Public Key + Private Key"> href="{{ url('certs/create') }}"><i class="fas fa-plus"></i><strong> New Certificate </strong></a>
-                                <a class="dropdown-item" data-toggle="tooltip" data-placement="right" title="Generates the CSR + Private Key"> href="{{ url('csr/create') }}"><i class="fas fa-plus"></i><strong> New Certificate Server Request </strong></a>
-                                <a class="dropdown-item" data-toggle="tooltip" data-placement="right" title="Saves the CSR & generate Public Key"> href="{{ url('csr/sign') }}"><i class="fas fa-file-signature"></i><strong> Sign Certificate Server Request </strong></a>
+                                <a class="dropdown-item" data-toggle="tooltip" data-placement="right" title="Generates the CSR + Public Key + Private Key" href="{{ url('certs/create') }}"><i class="fas fa-plus"></i><strong> New Certificate </strong></a>
+                                <a class="dropdown-item" data-toggle="tooltip" data-placement="right" title="Generates the CSR + Private Key" href="{{ url('csr/create') }}"><i class="fas fa-plus"></i><strong> New Certificate Server Request </strong></a>
+                                <a class="dropdown-item" data-toggle="tooltip" data-placement="right" title="Saves the CSR & generate Public Key" href="{{ url('csr/sign') }}"><i class="fas fa-file-signature"></i><strong> Sign Certificate Server Request </strong></a>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header"><strong>ROOT & CRL</strong></h6>
-                                <a class="dropdown-item"> href="{{ url('rootcrl/root') }}"><i class="fas fa-cloud-download-alt"></i><strong> Download Root Certificate(s) </strong></a>
-                                <a class="dropdown-item"> href="{{ url('rootcrl/crl') }}"><i class="fas fa-cloud-download-alt"></i><strong> Update & Download CRL(s) </strong></a>
+                                <a class="dropdown-item" href="{{ url('rootcrl/root') }}"><i class="fas fa-cloud-download-alt"></i><strong> Download Root Certificate(s) </strong></a>
+                                <a class="dropdown-item" href="{{ url('rootcrl/crl') }}"><i class="fas fa-cloud-download-alt"></i><strong> Update & Download CRL(s) </strong></a>
                             </ul>
                         </li>
                     </ul>
