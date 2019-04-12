@@ -5,7 +5,7 @@
 <div class="container">
     <H2>Sign a Java Archive (JAR)</H2>
     <div class="container">
-
+    <br />
     {{ Form::open(['url' => 'signer/signJAR', 'method' => 'POST', 'class' => 'form', 'files' => true]) }}
         <div class="form-group">
             {{--  {{ Form::label('Select JAR Archive') }}  --}}
