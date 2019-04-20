@@ -42,11 +42,11 @@
                     </button>
         -->
                     <!-- Branding Image -->
-<!--                      <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
-                    <div class="container"><img src="{{URL::asset('/img/logo.gif')}}" alt="LIQUABIT - Home"></div>
+                    <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
+                    <div class="container"><img src="{{URL::asset('/svg/logo.jpg')}}" alt="LIQUABit - Home"></div>
                         {{ config('app.name', '') }}
                     </a>
-                -->               </div>
+                    </div>
         </nav>
 
         @yield('content')
