@@ -60,7 +60,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
                     {{--  <strong>{{ config('app.name', '') }} <span class="badge badge-light">PoC</span></strong>  --}}
-                    <div><img src="{{URL::asset('/svg/logo.png')}}" alt="LIQUABit - Home"></div>
+                    <div><img src="{{URL::asset('/svg/logo_def.png')}}" alt="LIQUABit - Home"></div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
