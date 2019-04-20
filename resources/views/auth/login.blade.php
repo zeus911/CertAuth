@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
              {{--  <div class="card-header">{{ __('CertAuth') }} <span class="badge badge-light">PoC</span></div>  --}}
-             <div class="card-header"><h2><span class="badge badge-light">CertAuth PoC</span></h2></div>
+             <div class="card-header"><h1>CertAuth PoC</h1></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
