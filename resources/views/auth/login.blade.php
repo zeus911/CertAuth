@@ -15,8 +15,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right"><i class="fas fa-envelope"></i> {{ __('') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus>
-                                <p class="text-danger">User: demo</p>
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="Username = Demo" name="username" value="{{ old('username') }}" required autofocus>
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('username') }}</strong>
@@ -29,8 +28,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right"><i class="fas fa-key"></i> {{ __('') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" name="password" required>
-                                <p class="text-danger">Password: demo123</p>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password = demo123" name="password" required>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -43,8 +41,7 @@
                                 <label for="otc" class="col-md-4 col-form-label text-md-right"><i class="fas fa-key"></i> {{ __('') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="otc" type="password" class="form-control{{ $errors->has('otc') ? ' is-invalid' : '' }}" placeholder="One-Time-Code" name="otc" required>
-                                    <p class="text-danger">Demo OTC: 0000</p>
+                                    <input id="otc" type="password" class="form-control{{ $errors->has('otc') ? ' is-invalid' : '' }}" placeholder="One-Time-Code = 0000" name="otc" required>
                                     @if ($errors->has('otc'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('otc') }}</strong>
