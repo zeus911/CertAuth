@@ -42,8 +42,8 @@
                     </button>
         -->
                     <!-- Branding Image -->
-                     <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
-<!--                    <div class="container"><img src="{{URL::asset('/svg/logo.jpg')}}" alt="LIQUABit - Home"></div>
+<!--                     <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
+                    <div class="container"><img src="{{URL::asset('/svg/logo.jpg')}}" alt="LIQUABit - Home"></div>
                          {{ config('app.name', '') }}
                     </a> -->
                     </div>
