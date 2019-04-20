@@ -43,7 +43,7 @@
         -->
                     <!-- Branding Image -->
 <!--                     <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
-                    <div class="container"><img src="{{URL::asset('/svg/logo.jpg')}}" alt="LIQUABit - Home"></div>
+                    <div class="container"><img src="{{URL::asset('/svg/logo.png')}}" alt="LIQUABit - Home"></div>
                          {{ config('app.name', '') }}
                     </a> -->
                     </div>
