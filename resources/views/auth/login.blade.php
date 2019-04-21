@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
              {{--  <div class="card-header">{{ __('CertAuth') }} <span class="badge badge-light">PoC</span></div>  --}}
-             <div class="card-header"><h1><img src="{{URL::asset('/svg/logo_ca-def.png')}}" alt="LIQUABit - Home"></h1></div>
+             <div class="card-header"><h1><img src="{{URL::asset('/svg/logo_ca_def.png')}}" alt="LIQUABit - Home"></h1></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
