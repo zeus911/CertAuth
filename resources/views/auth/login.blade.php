@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8"> 
             <div class="card">
              {{--  <div class="card-header">{{ __('CertAuth') }} <span class="badge badge-light">PoC</span></div>  --}}
              <div class="card-header"><h1><img src="{{URL::asset('/svg/logo_ca_def.png')}}" alt="LIQUABit - Home"></h1></div>
