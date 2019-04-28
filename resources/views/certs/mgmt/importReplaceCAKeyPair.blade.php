@@ -47,10 +47,9 @@ MIICxDCCAawCAQAwYzELMAkGA1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0G
 A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
 YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
 -----END CRL-----', 'class' => 'form-control')) }}
-    <br />
+    <br />  
     <p><strong class="text-primary">Generate New CA CRL.</strong></p>
-    {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'method' => 'post']) }}
-    {{ Form::radio('newcrl', null, 'class' => 'form-control')) }}
+        <!--  radio button -->
     <br />
     <p><strong class="text-primary">Comments (Optional).</strong></p>
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'method' => 'post']) }}
