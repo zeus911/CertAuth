@@ -7,7 +7,7 @@
             <div class="card">
              {{--  <div class="card-header">{{ __('CertAuth') }} <span class="badge badge-light">PoC</span></div>  --}}
              <div class="card-header">
-                 <h1><i class="fab fa-product-hunt" aria-hidden="true"></i> Certificate Authority</h1>
+                 <h1><i class="fab fa-product-hunt" aria-hidden="true"></i> CertAuth</h1>
             </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
