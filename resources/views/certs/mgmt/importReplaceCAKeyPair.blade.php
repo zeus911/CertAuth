@@ -24,7 +24,6 @@ A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
 YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
 -----END CERTIFICATE-----', 'class' => 'form-control')) }}
     <br />
-    <br />
     <p><strong class="text-primary">Paste your CA Private Key content.</strong></p>
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'files' => 'true', 'method' => 'post']) }}
     {{ Form::textarea('privateKey', null, array('placeholder' => '-----BEGIN PRIVATE KEY-----
@@ -37,11 +36,25 @@ A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
 YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
 -----END PRIVATE KEY-----', 'class' => 'form-control')) }}
     <br />
+    <p><strong class="text-primary">Paste your CA CRL content.</strong></p>
+    {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'files' => 'true', 'method' => 'post']) }}
+    {{ Form::textarea('crl', null, array('placeholder' => '-----BEGIN CRL-----
+MIICxDCCAawCAQAwYzELMAkGA1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0G
+A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
+YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+ALh6+mATYMZoFetFaaL6lFDGoLSblVyhee2mE5hjGJtTQNEtxIX8KjxNj8xdOozy
+MIICxDCCAawCAQAwYzELMAkGA1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0G
+A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
+YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+-----END CRL-----', 'class' => 'form-control')) }}
+    <br />
+    <p><strong class="text-primary">Generate New CA CRL.</strong></p>
+    {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'method' => 'post']) }}
+    {{ Form::radio('newcrl', null, 'class' => 'form-control')) }}
     <br />
     <p><strong class="text-primary">Comments (Optional).</strong></p>
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'method' => 'post']) }}
     {{ Form::textarea('comments', null, array('placeholder' => 'Give some information here', 'class' => 'form-control')) }}
-    <br />
     <br />
     {{ Form::token() }}
     {{ Form::button('<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Import / Replace', ['class' => 'btn btn-success', 'type' => 'submit']) }}
