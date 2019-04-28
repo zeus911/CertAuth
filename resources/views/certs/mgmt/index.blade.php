@@ -67,7 +67,7 @@
                 {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair/', 'method' => 'post']) }}
                 {{csrf_field()}}
                 {{ Form::token() }}
-                {{ Form::submit('Import/Replace CA Keypair', ['class' => 'btn btn-danger', 'type' => 'submit']) }}
+                {{ Form::submit('Import / Replace CA Keypair', ['class' => 'btn btn-danger', 'type' => 'submit']) }}
                 {{ Form::close() }}
                 </td>
             <br />
