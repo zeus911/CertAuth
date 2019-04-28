@@ -57,10 +57,20 @@
             {{ Form::open(['url' => 'certs/mgmt/import/', 'method' => 'post']) }}
             {{csrf_field()}}
             {{ Form::token() }}
-            {{ Form::submit('Import Certificate', ['class' => 'btn btn-secondary', 'type' => 'submit']) }}
+            {{ Form::submit('Import Keypair', ['class' => 'btn btn-secondary', 'type' => 'submit']) }}
             {{ Form::close() }}
             </td>
         <br />
+        <div class="btn-group mr-2" role="group">
+                <td>
+                {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair/', 'method' => 'post']) }}
+                {{csrf_field()}}
+                {{ Form::token() }}
+                {{ Form::submit('Import/Replace CA Keypair', ['class' => 'btn btn-danger', 'type' => 'submit']) }}
+                {{ Form::close() }}
+                </td>
+            <br />
+    
         </div>
     </div>
 </div>
