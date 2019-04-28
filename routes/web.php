@@ -27,6 +27,7 @@ Route::post('certs/mgmt/details/', 'MgmtController@details');
 Route::post('certs/mgmt/viewCSR', [ 'as' => 'viewCSR', 'uses' => 'MgmtController@viewCSR']);
 Route::post('certs/mgmt/update', 'MgmtController@update');
 Route::any('certs/mgmt/import', 'MgmtController@import');
+Route::any('certs/mgmt/importReplaceCAKeyPair', 'MgmtController@importReplaceCAKeyPair');
 //Route::post('certs/mgmt/updateCSR', 'MgmtController@updateCSR');
 //Route::post('certs/mgmt/updatePublicKey', 'MgmtController@updatePublicKey');
 //Route::post('certs/mgmt/updatePrivateKey', 'MgmtController@updatePrivateKey');

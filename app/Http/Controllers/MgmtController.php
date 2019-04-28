@@ -420,4 +420,9 @@ class MgmtController extends Controller
           return view('certs.mgmt.import');
     }
 
+    public function importReplaceCAKeyPair()
+    {
+          return view('certs.mgmt.importReplaceCAKeyPair');
+    }
+
 }
