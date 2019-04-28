@@ -36,7 +36,9 @@ A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
 YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
 -----END PRIVATE KEY-----', 'class' => 'form-control')) }}
     <br />
-    <p><strong class="text-primary">Paste your CA CRL content.</strong></p>
+    <p><strong class="text-primary">Generate New CA CRL or Paste your CA CRL content</strong></p>
+    <p class="text-info"> Generate New CRL {{ Form::radio('New CRL', 'Generate', array('class'=>'form-control')) }}</p>
+    <br />
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'files' => 'true', 'method' => 'post']) }}
     {{ Form::textarea('crl', null, array('placeholder' => '-----BEGIN CRL-----
 MIICxDCCAawCAQAwYzELMAkGA1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0G
@@ -48,9 +50,6 @@ A1UEBxMGTWFkcmlkMRUwEwYDVQQKEwxHUlVQTyBUUkFHU0ExGzAZBgNVBAMTEmVm
 YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
 -----END CRL-----', 'class' => 'form-control')) }}
     <br />  
-    <p><strong class="text-primary">Generate New CA CRL.</strong>
-    {{ Form::radio('New CRL', 'Generate', array('class'=>'form-control')) }}</p>
-    <br />
     <p><strong class="text-primary">Comments (Optional).</strong></p>
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'method' => 'post']) }}
     {{ Form::textarea('comments', null, array('placeholder' => 'Give some information here', 'class' => 'form-control')) }}
