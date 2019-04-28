@@ -60,6 +60,7 @@
             {{ Form::submit('Import Keypair', ['class' => 'btn btn-secondary', 'type' => 'submit']) }}
             {{ Form::close() }}
             </td>
+            </div>
         <br />
         <div class="btn-group mr-2" role="group">
                 <td>
@@ -70,7 +71,6 @@
                 {{ Form::close() }}
                 </td>
             <br />
-    
         </div>
     </div>
 </div>
