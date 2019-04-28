@@ -49,7 +49,7 @@ YWN0dXJhLnRyYWdzYS5lczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
 -----END CRL-----', 'class' => 'form-control')) }}
     <br />  
     <p><strong class="text-primary">Generate New CA CRL.</strong></p>
-        <!--  radio button -->
+    {{ Form::radio('New CRL', 'Generate') }}
     <br />
     <p><strong class="text-primary">Comments (Optional).</strong></p>
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'method' => 'post']) }}
