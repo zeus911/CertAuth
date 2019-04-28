@@ -42,13 +42,13 @@
                     </button>
         -->
                     <!-- Branding Image -->
-<!--                     <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
+        <!--        <a class="navbar-brand" href="{{ url('certs/mgmt') }}">
                     <div class="container">
-                    <i class="fab fa-product-hunt" aria-hidden="true"></i>rototypes 
-                    <!--  <img src="{{URL::asset('/svg/logo_ca_def.png')}}" alt="LIQUABit - Home"> -->
+                    Certificate Authority
                     </div>
                          {{ config('app.name', '') }}
-                    </a> -->
+                    </a>
+        -->
                     </div>
         </nav>
 
