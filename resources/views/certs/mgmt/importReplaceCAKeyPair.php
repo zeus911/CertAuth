@@ -13,7 +13,6 @@
         {{ $errors->first('subjectCommonName') }} 
     @endif
     <br />
-    <br />
     <p><strong class="text-primary">Paste your CA Public Key content.</strong></p>
     {{ Form::open(['url' => 'certs/mgmt/importReplaceCAKeyPair', 'files' => 'true', 'method' => 'post']) }}
     {{ Form::textarea('publicKey', null, array('placeholder' => '-----BEGIN CERTIFICATE-----
