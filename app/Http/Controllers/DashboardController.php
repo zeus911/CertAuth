@@ -42,7 +42,7 @@ class DashboardController extends Controller
         $certs_status->dataset('Certificates Status', 'bar', [$certs_status_blank, $certs_status_valid, $certs_status_expiring, $certs_status_expired, $certs_status_revoked])
         ->color(['#3333ff', '#33cc33', '#ff8000', '#ff0000', '#ff0000']);
         //$certs_status->container($certs_status->lebels = null);
-
+dd($certs_status);
         // Charts Issued by CA
         $IssuerCNLB = Cert::where('issuerCN', 'like', '%LIQUAB%')->count();
         $IssuerCNFP = Cert::where('issuerCN', 'like', '%FIRMAPROFESIONAL%')->count();
