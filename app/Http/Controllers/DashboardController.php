@@ -42,7 +42,7 @@ class DashboardController extends Controller
         $certs_status->dataset('Certificates Status', 'bar', [$certs_status_blank, $certs_status_valid, $certs_status_expiring, $certs_status_expired, $certs_status_revoked])
         ->color(['#3333ff', '#33cc33', '#ff8000', '#ff0000', '#ff0000']);
         //$certs_status->container($certs_status->lebels = null);
-dd($certs_status_valid);
+
         // Charts Issued by CA
         $IssuerCNLB = Cert::where('issuerCN', 'like', '%LIQUAB%')->count();
         $IssuerCNFP = Cert::where('issuerCN', 'like', '%FIRMAPROFESIONAL%')->count();
@@ -51,6 +51,8 @@ dd($certs_status_valid);
         $IssuerCNVE = Cert::where('issuerCN', 'like', '%Verisign%')->count();
         $IssuerCNLE1 = Cert::where('issuerCN', 'like', '%Let´s Encrypt%')->count();
         $IssuerCNLE2 = Cert::where('issuerCN', 'like', '%DST%')->count();
+
+        dd($IssuerCNLB);
 
         $certs_issued_by = new CertsIssuedBy;
         $certs_issued_by->labels(['LIQUABit', 'Firma Profesional', 'DigiCert', 'Symantec', 'Verisign', "Let's Encrypt", "DST Root CA X3"]);
