@@ -10,7 +10,7 @@
   <div class="container-fuid">
   	<div class="row">
   		<div class="col-md-12 col-sm-12">
-  			{!! $certs_issued_by->container() !!} 
+  			{{ $certs_issued_by->container() }} 
   		</div>
   		<div class="col-md-12 col-sm-12">
 			{!! $certs_status->container() !!} 
