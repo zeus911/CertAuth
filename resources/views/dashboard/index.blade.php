@@ -3,8 +3,8 @@
 
 <div class="container">
 
-  <h1><center>Certificates Dashboard</center></h1>
-  <h3 class="text-info"><center>Total Nº of Certificates: <strong class="text-success"> {{ $certsNumber }}</strong></center></h3>
+  <h1>Certificates Dashboard</h1>
+  <h3 class="text-info">Total Nº of Certificates: <strong class="text-success"> {{ $certsNumber }}</strong></h3>
      
   <!-- // Number of Certificates By CA -->
   <div class="container-fuid">
