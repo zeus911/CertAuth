@@ -66,7 +66,7 @@ class DashboardController extends Controller
         $certs_type = new CertsTypes;
         $certs_type->labels(['TLS Web Server Authentication', 'TLS Web Client Authentication', 'Code Signing']);
         $certs_type->dataset('extensionsExtendedKeyUsage', 'bar', [$certs_tls_web_server, $certs_cliencerts_tls_web_client, $certs_code_signing])->color('#3333ff');
-//dd($certs_tls_web_server, $certs_cliencerts_tls_web_client, $certs_code_signing);
+dd($certs_tls_web_server, $certs_cliencerts_tls_web_client, $certs_code_signing);
         return view ('dashboard.index', [
           'certsNumber' => $certsNumber,
           'certs_number_issued' => $certs_number_issued,
