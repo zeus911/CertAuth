@@ -4,7 +4,7 @@
 <div class="container">
 
   <h1>Certificates Dashboard</h1>
-  <h3 class="text-info">Total Nº of Certificates: <strong class="text-success"> {{ $certsNumber }}</strong></h3>
+  <h4 class="text-info">Total Nº of Certificates: <strong class="text-success"> {{ $certsNumber }}</strong></h4>
      
   <!-- // Number of Certificates By CA -->
   <div class="container-fuid">
