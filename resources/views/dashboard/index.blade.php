@@ -3,10 +3,8 @@
 @section('content') 
 
 <div class="container">
-
   <h1>Certificates Dashboard</h1>
   <h4 class="text-primary">Total Nº of Certificates: <strong class="text-success"> {{ $certsNumber }}</strong></h4>
-     
   <!-- // Number of Certificates By CA -->
   <div class="container-fuid">
   	<div class="row">
@@ -24,6 +22,5 @@
   		</div>
   	</div>
   </div>	
-
 </div> 
 @endsection
